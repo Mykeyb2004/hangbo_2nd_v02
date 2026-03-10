@@ -149,28 +149,21 @@ select {
 }
 
 .hero-title {
-  display: grid;
-  gap: clamp(6px, 0.9vw, 12px);
+  display: flex;
   max-width: 100%;
 }
 
 .hero-title-line {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: baseline;
   gap: 14px;
   width: fit-content;
   max-width: 100%;
-  font-size: clamp(2.2rem, 4.7vw, 4.4rem);
+  font-size: clamp(1.35rem, 2.7vw, 2.6rem);
   line-height: 0.94;
   letter-spacing: -0.075em;
-  text-wrap: balance;
   white-space: nowrap;
-}
-
-.hero-title-line.is-tail {
-  color: color-mix(in srgb, var(--text) 88%, var(--primary));
-  letter-spacing: -0.06em;
 }
 
 .hero-title-tag {
@@ -595,10 +588,10 @@ select {
   }
 
   .hero-title-line {
-    width: 100%;
+    width: fit-content;
     gap: 10px;
-    white-space: normal;
-    font-size: clamp(1.9rem, 8.6vw, 3rem);
+    white-space: nowrap;
+    font-size: clamp(1.05rem, 4.8vw, 1.7rem);
   }
 
   .highlight-grid,

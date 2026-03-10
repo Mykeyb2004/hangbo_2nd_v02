@@ -19,10 +19,7 @@ export function ReportDashboard({ data }: ReportDashboardProps) {
           <span className="hero-kicker">Survey Analytics · Next.js</span>
           <h1 className="hero-title">
             {heroTitle.lines.map((line, index) => (
-              <span
-                className={`hero-title-line${index === heroTitle.lines.length - 1 ? " is-tail" : ""}`}
-                key={line}
-              >
+              <span className="hero-title-line" key={line}>
                 {line}
                 {index === 0 && heroTitle.tag ? (
                   <em className="hero-title-tag">{heroTitle.tag}</em>
