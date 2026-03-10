@@ -1,0 +1,159 @@
+version: 1
+
+input:
+  workbook_path: data/data.xlsx
+  field_mapping_path: outputs/survey_field_mapping.csv
+  questionnaire_outline_path: 问卷.md
+
+output:
+  report_markdown_path: outputs/generated_report.md
+  report_context_path: outputs/generated_report_context.json
+  chart_plan_path: outputs/chart_plan.json
+  metrics_summary_path: outputs/metrics_summary.json
+
+audience:
+  field: 受访身份
+  merge_enabled: false
+  merge_map: {}
+  order: []
+  min_group_n_for_chart: 10
+  min_group_n_for_breakdown: 15
+  min_group_n_for_exclusive_section: 10
+  small_group_strategy: footnote
+  empty_group_behavior: skip_with_note
+  labels:
+    other_group: 其他
+    insufficient_group: 样本过少不单列
+
+field_rules:
+  analyze_status:
+    include:
+      - analyze
+    qualitative:
+      - qualitative_review
+    exclude:
+      - skip
+  field_type_roles:
+    rating_10pt: score
+    single_choice: categorical
+    multiple_choice_option: multi_binary
+    open_text: text
+    metadata: ignore
+  exclusive_field_behavior:
+    use_applicable_to_as_scope: true
+    include_in_overall_common: false
+    include_in_audience_common_compare: false
+    allow_directional_cross_group_compare: true
+    cross_group_compare_mode: directional_only
+
+cleaning:
+  treat_blank_as_missing: true
+  trim_whitespace: true
+  rating_10pt:
+    valid_min: 1
+    valid_max: 10
+    explicit_missing_values:
+      - 0
+      - 11
+    invalid_value_behavior: as_missing
+  multiple_choice_option:
+    selected_values:
+      - "1"
+    unselected_values:
+      - ""
+      - null
+  categorical:
+    strip_numeric_prefix_for_labels: false
+
+metrics:
+  overall:
+    rating:
+      mean: true
+      valid_n: true
+      missing_n: true
+      high_score_rate:
+        enabled: true
+        threshold: 8
+    categorical:
+      distribution: true
+      top_option: true
+    multiple_choice:
+      selection_rate: true
+  grouped:
+    enabled: true
+    compare_by_audience: true
+    compare_only_when_group_n_at_least: 10
+    max_groups_in_main_chart: 4
+  ranking:
+    top_n_strengths: 3
+    top_n_issues: 3
+    sort_desc_for_scores: true
+    sort_desc_for_selection_rate: true
+
+chapter_rules:
+  common_overall:
+    include_applicable_to_empty_only: true
+    audience_breakdown: false
+  common_by_audience:
+    include_applicable_to_empty_only: true
+    audience_breakdown: true
+  exclusive_by_applicability:
+    include_applicable_to_empty_only: false
+    audience_breakdown: false
+    generate_one_section_per_applicable_to: true
+  qualitative_digest:
+    enabled: true
+    quote_limit: 5
+    theme_limit: 6
+  action_priority_matrix:
+    enabled: true
+    combine_inputs:
+      - low_score_items
+      - high_problem_selection_items
+      - high_improvement_selection_items
+
+charts:
+  palette: default
+  locale: zh-CN
+  score_distribution:
+    bins:
+      - "1-3"
+      - "4-6"
+      - "7-8"
+      - "9-10"
+  grouped_radar:
+    enabled_when_group_count_between:
+      min: 2
+      max: 4
+  grouped_stacked_bar:
+    normalize_to_percent: true
+  mean_ranking:
+    default_sort: desc
+    top_n: 10
+  selection_rate_bar:
+    default_sort: desc
+    top_n: 10
+
+narrative:
+  language: zh-CN
+  style: research_report
+  summary_mode: placeholder_first
+  auto_conclusion:
+    enabled: false
+  phrasing:
+    insufficient_sample: 样本量不足，不展开单独分析。
+    directional_compare_note: 不同客群专属题语境不同，仅作方向性参考。
+    exclusive_scope_note: 本部分结果仅基于适用样本统计。
+
+quality_checks:
+  require_mapping_file: true
+  require_audience_field: true
+  fail_on_missing_required_chart_field: true
+  warn_on_empty_section: true
+  warn_on_small_group: true
+  warn_on_all_missing_metric: true
+
+runtime:
+  export_intermediate_context: true
+  export_chart_plan: true
+  export_metrics_summary: true

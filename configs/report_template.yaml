@@ -1,0 +1,337 @@
+version: 1
+report:
+  id: hangbo_satisfaction_report
+  title: 杭州国际博览中心二期（测试）展会满意度研究报告
+  language: zh-CN
+  output_format: markdown
+  description: >
+    基于原始问卷数据、字段映射和规则配置动态生成的满意度研究报告模板。
+
+chapters:
+  - id: research_overview
+    title: 研究概述
+    mode: static_scaffold
+    enabled: true
+    narrative_template:
+      summary:
+        - 说明研究背景、目标与测试阶段场景。
+        - 说明样本来源、问卷结构与分析边界。
+      placeholders:
+        - sample_size
+        - valid_sample_size
+        - audience_field
+    sections:
+      - id: respondent_profile
+        title: 研究对象与样本说明
+        analysis_mode: descriptive
+        field_selector:
+          chart_titles:
+            - 受访身份
+            - 性别
+            - 年龄
+        charts:
+          - type: bar_distribution
+            title_template: 样本身份构成
+          - type: bar_distribution
+            title_template: 样本性别与年龄结构
+
+  - id: executive_summary
+    title: 核心结论摘要
+    mode: summary_block
+    enabled: true
+    narrative_template:
+      summary:
+        - 自动汇总整体满意度、预期达成、再次参与意愿与关键短板。
+        - 生成“保持优势/优先整改/持续优化”三类摘要占位。
+      placeholders:
+        - top_strengths
+        - top_issues
+        - management_actions
+
+  - id: overall_common
+    title: 全体共性体验总览
+    mode: common_overall
+    enabled: true
+    description: 仅使用全体共性字段，先展示全体总体，不进入分支题。
+    sections:
+      - id: overall_attitude
+        title: 总体体验评价
+        analysis_mode: overall_metrics
+        field_selector:
+          chart_titles:
+            - 总体满意度
+            - 整体体验是否达预期
+            - 是否愿意再次参加
+        charts:
+          - type: score_distribution
+            field: 总体满意度
+            title_template: 总体满意度分布
+          - type: category_distribution
+            field: 整体体验是否达预期
+            title_template: 整体体验预期达成情况
+          - type: category_distribution
+            field: 是否愿意再次参加
+            title_template: 再次参加意愿分布
+          - type: metric_cards
+            title_template: 总体体验核心指标
+      - id: common_rating_modules
+        title: 共性模块满意度表现
+        analysis_mode: rating_module_ranking
+        field_selector:
+          analysis_status: analyze
+          applicable_to: ""
+          question_groups:
+            - 到达与入场体验
+            - 场馆环境与基础条件
+            - 测试阶段现场管理
+          field_types:
+            - rating_10pt
+        charts:
+          - type: grouped_mean_bar
+            group_by: question_group
+            title_template: 三大模块满意度均值对比
+          - type: mean_ranking
+            title_template: 共性评分题满意度排名
+      - id: overall_common_summary
+        title: 全体总体体验综合判断
+        analysis_mode: rule_based_summary
+        narrative_template:
+          summary:
+            - 综合总体满意度、预期达成与再次参与意愿，生成总体判断。
+            - 提取共性模块中的高分项与短板项。
+
+  - id: audience_comparison
+    title: 客群共性对比分析
+    mode: common_by_audience
+    enabled: true
+    description: 仅比较所有客群都回答过的共性题，不纳入分支题。
+    sections:
+      - id: audience_scope
+        title: 客群划分与对比口径
+        analysis_mode: audience_scope
+        field_selector:
+          chart_titles:
+            - 受访身份
+        charts:
+          - type: audience_size_bar
+            title_template: 客群样本量对比
+        narrative_template:
+          summary:
+            - 动态识别有效客群及样本量。
+            - 小样本客群按规则决定是否单列展示。
+      - id: audience_attitude_compare
+        title: 总体体验的客群差异
+        analysis_mode: grouped_compare
+        field_selector:
+          chart_titles:
+            - 总体满意度
+            - 整体体验是否达预期
+            - 是否愿意再次参加
+        charts:
+          - type: grouped_mean_bar
+            field: 总体满意度
+            title_template: 不同客群总体满意度对比
+          - type: grouped_stacked_bar
+            fields:
+              - 整体体验是否达预期
+              - 是否愿意再次参加
+            title_template: 不同客群态度分布对比
+      - id: audience_common_module_compare
+        title: 共性体验模块的客群差异
+        analysis_mode: grouped_module_compare
+        field_selector:
+          analysis_status: analyze
+          applicable_to: ""
+          question_groups:
+            - 到达与入场体验
+            - 场馆环境与基础条件
+            - 测试阶段现场管理
+          field_types:
+            - rating_10pt
+        charts:
+          - type: grouped_module_bar
+            title_template: 不同客群三大模块满意度对比
+          - type: grouped_radar
+            title_template: 不同客群共性体验雷达图
+      - id: audience_test_status_compare
+        title: 测试状态感知的客群差异
+        analysis_mode: grouped_compare
+        field_selector:
+          chart_titles:
+            - 是否感受到未完工状态
+            - 未完工状态影响程度
+        charts:
+          - type: grouped_stacked_bar
+            title_template: 不同客群对测试状态的感知与影响
+      - id: audience_compare_summary
+        title: 客群差异总结
+        analysis_mode: rule_based_summary
+        narrative_template:
+          summary:
+            - 自动识别差异最大的题目和模块。
+            - 输出“更敏感客群/更满意客群/重点关注客群”占位结论。
+
+  - id: exclusive_experience
+    title: 客群专属体验分析
+    mode: exclusive_by_applicability
+    enabled: true
+    description: 仅展示适用样本内部结果，不与全体样本混合计算总体。
+    sections:
+      - id: exhibitor_experience
+        title: 参展商/服务商体验
+        analysis_mode: exclusive_group_overall
+        field_selector:
+          analysis_status: analyze
+          applicable_to: 参展商/服务商
+          field_types:
+            - rating_10pt
+        charts:
+          - type: exclusive_mean_bar
+            title_template: 参展商/服务商专属体验均值图
+          - type: mean_ranking
+            title_template: 参展商/服务商专属题排名
+      - id: visitor_experience
+        title: 观众体验
+        analysis_mode: exclusive_group_overall
+        field_selector:
+          analysis_status: analyze
+          applicable_to: 观众
+          field_types:
+            - rating_10pt
+        charts:
+          - type: exclusive_mean_bar
+            title_template: 观众专属体验均值图
+          - type: mean_ranking
+            title_template: 观众专属题排名
+      - id: organizer_experience
+        title: 主办方相关体验题说明
+        analysis_mode: exclusive_group_guard
+        field_selector:
+          analysis_status: analyze
+          applicable_to: 主办方工作人员
+          field_types:
+            - rating_10pt
+        guard:
+          insufficient_data_behavior: narrative_only
+          narrative_when_empty: 主办方工作人员分支题当前无有效作答，报告中仅做样本说明，不展开实证分析。
+      - id: exclusive_display_principle
+        title: 客群专属体验展示原则
+        analysis_mode: static_scaffold
+        narrative_template:
+          summary:
+            - 专属题只在适用样本内部展示。
+            - 若需并列展示不同客群专属题，仅作为方向性参考。
+
+  - id: test_state_assessment
+    title: 测试状态专项评估
+    mode: topic_assessment
+    enabled: true
+    sections:
+      - id: unfinished_perception
+        title: 未完工状态感知程度
+        analysis_mode: category_distribution
+        field_selector:
+          chart_titles:
+            - 是否感受到未完工状态
+        charts:
+          - type: category_distribution
+            field: 是否感受到未完工状态
+            title_template: 未完工状态感知程度
+      - id: unfinished_impact
+        title: 未完工状态对体验影响程度
+        analysis_mode: category_distribution
+        field_selector:
+          chart_titles:
+            - 未完工状态影响程度
+        charts:
+          - type: category_distribution
+            field: 未完工状态影响程度
+            title_template: 未完工状态影响程度
+      - id: perceived_problems
+        title: 测试阶段的具体问题感知
+        analysis_mode: multiple_choice_summary
+        field_selector:
+          analysis_status: analyze
+          question_groups:
+            - 明显问题
+          field_types:
+            - multiple_choice_option
+        charts:
+          - type: selection_rate_bar
+            title_template: 测试阶段突出问题选中率
+      - id: test_state_path
+        title: 测试状态影响路径判断
+        analysis_mode: linked_insight
+        dependencies:
+          - unfinished_perception
+          - unfinished_impact
+          - common_rating_modules
+        narrative_template:
+          summary:
+            - 结合感知、影响和共性模块表现，判断测试状态的主要影响路径。
+
+  - id: improvement_actions
+    title: 改进方向与建议归纳
+    mode: actions_and_texts
+    enabled: true
+    sections:
+      - id: structured_improvements
+        title: 结构化改进诉求
+        analysis_mode: multiple_choice_summary
+        field_selector:
+          analysis_status: analyze
+          question_groups:
+            - 待提升方面
+          field_types:
+            - multiple_choice_option
+        charts:
+          - type: selection_rate_bar
+            title_template: 场馆待提升方向选中率
+      - id: text_feedback
+        title: 文本意见归纳
+        analysis_mode: qualitative_digest
+        field_selector:
+          analysis_status: qualitative_review
+        outputs:
+          - theme_candidates
+          - representative_quotes
+          - issue_clusters
+      - id: action_priority
+        title: 整改优先级框架
+        analysis_mode: action_priority_matrix
+        dependencies:
+          - structured_improvements
+          - perceived_problems
+          - common_rating_modules
+        narrative_template:
+          summary:
+            - 结合满意度短板、问题感知和改进诉求，输出整改优先级占位。
+
+  - id: conclusion
+    title: 结论与行动建议
+    mode: final_summary
+    enabled: true
+    narrative_template:
+      summary:
+        - 汇总主要研究结论。
+        - 汇总行动建议与后续跟踪建议。
+      placeholders:
+        - key_findings
+        - action_list
+        - tracking_suggestions
+
+  - id: appendix
+    title: 附录
+    mode: appendix_bundle
+    enabled: true
+    sections:
+      - id: field_mapping_appendix
+        title: 问卷结构与字段说明
+        analysis_mode: table_appendix
+        source: outputs/survey_field_mapping.csv
+      - id: methodology_appendix
+        title: 分析口径说明
+        analysis_mode: rule_dump
+      - id: chart_plan_appendix
+        title: 报告图表清单
+        analysis_mode: chart_plan_dump
