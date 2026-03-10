@@ -282,6 +282,8 @@ select {
   z-index: 1;
   display: grid;
   gap: 10px;
+  min-width: 0;
+  padding-right: clamp(48px, 4.5vw, 88px);
 }
 
 .highlight-card-art {
@@ -308,8 +310,20 @@ select {
 }
 
 .highlight-card strong {
+  margin: 0;
   font-size: clamp(1.5rem, 2vw, 2.4rem);
   line-height: 1.05;
+}
+
+.highlight-value {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+.highlight-value span {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .hero-footer {

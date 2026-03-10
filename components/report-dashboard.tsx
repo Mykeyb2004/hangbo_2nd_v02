@@ -1,6 +1,11 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import {
+  useLayoutEffect,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
 
 import { QuestionBlock } from "@/components/question-block";
 import { buildHeroTitleLayout } from "@/lib/report-helpers";
@@ -30,6 +35,79 @@ const defaultHighlightVisual: HighlightVisual = {
     </svg>
   ),
 };
+
+type AutoShrinkValueProps = {
+  value: string;
+};
+
+function AutoShrinkValue({ value }: AutoShrinkValueProps) {
+  const wrapperRef = useRef<HTMLElement>(null);
+  const valueRef = useRef<HTMLSpanElement>(null);
+
+  useLayoutEffect(() => {
+    const wrapper = wrapperRef.current;
+    const element = valueRef.current;
+    if (!wrapper || !element) {
+      return;
+    }
+
+    const minFontSize = 16;
+    let frameId = 0;
+
+    const fitText = () => {
+      element.style.fontSize = "";
+
+      const baseFontSize = Number.parseFloat(getComputedStyle(element).fontSize);
+      if (!Number.isFinite(baseFontSize)) {
+        return;
+      }
+
+      const availableWidth = wrapper.clientWidth;
+      const textWidth = element.scrollWidth;
+      if (availableWidth <= 0 || textWidth <= 0) {
+        return;
+      }
+
+      if (textWidth <= availableWidth) {
+        return;
+      }
+
+      let nextFontSize = Math.floor(baseFontSize * (availableWidth / textWidth));
+      nextFontSize = Math.max(minFontSize, nextFontSize);
+      element.style.fontSize = `${nextFontSize}px`;
+
+      while (element.scrollWidth > availableWidth && nextFontSize > minFontSize) {
+        nextFontSize -= 1;
+        element.style.fontSize = `${nextFontSize}px`;
+      }
+    };
+
+    const scheduleFit = () => {
+      cancelAnimationFrame(frameId);
+      frameId = window.requestAnimationFrame(fitText);
+    };
+
+    scheduleFit();
+
+    const resizeObserver = new ResizeObserver(scheduleFit);
+    resizeObserver.observe(wrapper);
+
+    window.addEventListener("resize", scheduleFit);
+    document.fonts?.ready.then(scheduleFit).catch(() => {});
+
+    return () => {
+      cancelAnimationFrame(frameId);
+      resizeObserver.disconnect();
+      window.removeEventListener("resize", scheduleFit);
+    };
+  }, [value]);
+
+  return (
+    <strong className="highlight-value" title={value} ref={wrapperRef}>
+      <span ref={valueRef}>{value}</span>
+    </strong>
+  );
+}
 
 function getHighlightVisual(label: string): HighlightVisual {
   switch (label) {
@@ -159,7 +237,7 @@ export function ReportDashboard({ data }: ReportDashboardProps) {
                 <div className="highlight-card-art">{visual.icon}</div>
                 <div className="highlight-card-content">
                   <span>{highlight.label}</span>
-                  <strong>{highlight.value}</strong>
+                  <AutoShrinkValue value={highlight.value} />
                   <small>{highlight.detail}</small>
                 </div>
               </article>
