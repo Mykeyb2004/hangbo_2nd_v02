@@ -25,14 +25,6 @@ export function formatPercent(ratio: number) {
   return `${(ratio * 100).toFixed(ratio === 0 || ratio >= 0.1 ? 1 : 2)}%`;
 }
 
-export function formatGeneratedAt(value: string) {
-  return new Intl.DateTimeFormat("zh-CN", {
-    dateStyle: "medium",
-    timeStyle: "short",
-    timeZone: "Asia/Shanghai",
-  }).format(new Date(value));
-}
-
 export function getMaxRatio(options: DistributionOption[]) {
   return Math.max(...options.map((option) => option.ratio), 0);
 }

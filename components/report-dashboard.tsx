@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import { QuestionBlock } from "@/components/question-block";
-import { buildHeroTitleLayout, formatGeneratedAt } from "@/lib/report-helpers";
+import { buildHeroTitleLayout } from "@/lib/report-helpers";
 import type { ReportData } from "@/lib/report-types";
 
 type ReportDashboardProps = {
@@ -23,7 +23,6 @@ export function ReportDashboard({ data }: ReportDashboardProps) {
 
       <section className="hero-card">
         <div className="hero-text">
-          <span className="hero-kicker">Survey Analytics · Next.js</span>
           <h1 className="hero-title">
             {heroTitle.lines.map((line, index) => (
               <span className="hero-title-line" key={line}>
@@ -38,7 +37,6 @@ export function ReportDashboard({ data }: ReportDashboardProps) {
           <div className="hero-meta">
             <span>样本总量 {data.meta.responseCount}</span>
             <span>客群页签 {data.meta.filters.length}</span>
-            <span>生成时间 {formatGeneratedAt(data.meta.generatedAt)}</span>
           </div>
         </div>
 
@@ -101,8 +99,8 @@ export function ReportDashboard({ data }: ReportDashboardProps) {
           {data.sections.map((section) => (
             <section className="section-card" id={section.id} key={section.id}>
               <div className="section-head">
-                <div>
-                  <span className="section-index">{section.indexLabel}</span>
+                <div className="section-title-row">
+                  <span className="section-index">{`${section.indexLabel}、`}</span>
                   <h2>{section.title}</h2>
                 </div>
                 {section.description ? (

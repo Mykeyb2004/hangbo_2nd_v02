@@ -129,7 +129,6 @@ select {
 
 .hero-kicker,
 .nav-kicker,
-.section-index,
 .question-code {
   display: inline-flex;
   align-items: center;
@@ -370,8 +369,24 @@ select {
   margin-bottom: 20px;
 }
 
+.section-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+}
+
 .section-head h2 {
   font-size: clamp(1.6rem, 2vw, 2.2rem);
+}
+
+.section-index {
+  display: inline-flex;
+  color: var(--primary);
+  font-size: clamp(1.6rem, 2vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
 }
 
 .question-card {
