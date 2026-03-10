@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  useEffect,
   useLayoutEffect,
   useRef,
   useState,
@@ -200,6 +201,34 @@ export function ReportDashboard({ data }: ReportDashboardProps) {
   const [activeFilterKey, setActiveFilterKey] = useState(
     data.meta.filters[0]?.key ?? "overall",
   );
+  const [isQuickNavOpen, setIsQuickNavOpen] = useState(false);
+  const quickNavRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isQuickNavOpen) {
+      return;
+    }
+
+    const handlePointerDown = (event: PointerEvent) => {
+      if (!quickNavRef.current?.contains(event.target as Node)) {
+        setIsQuickNavOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsQuickNavOpen(false);
+      }
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isQuickNavOpen]);
 
   return (
     <main className="report-shell">
@@ -275,21 +304,6 @@ export function ReportDashboard({ data }: ReportDashboardProps) {
       </section>
 
       <div className="report-layout">
-        <aside className="report-nav">
-          <div className="nav-card">
-            <span className="nav-kicker">问卷结构</span>
-            <h2>快速跳转</h2>
-            <nav>
-              {data.sections.map((section) => (
-                <a href={`#${section.id}`} key={section.id}>
-                  <span>{section.indexLabel}</span>
-                  <strong>{section.title}</strong>
-                </a>
-              ))}
-            </nav>
-          </div>
-        </aside>
-
         <div className="section-stack">
           {data.sections.map((section) => (
             <section className="section-card" id={section.id} key={section.id}>
@@ -317,6 +331,61 @@ export function ReportDashboard({ data }: ReportDashboardProps) {
             </section>
           ))}
         </div>
+      </div>
+
+      <div className="quick-nav-fab" ref={quickNavRef}>
+        <div
+          className={
+            isQuickNavOpen ? "quick-nav-panel is-open" : "quick-nav-panel"
+          }
+          id="report-quick-nav-panel"
+        >
+          <span className="nav-kicker">问卷结构</span>
+          <nav aria-label="快速跳转">
+            {data.sections.map((section) => (
+              <a
+                href={`#${section.id}`}
+                key={section.id}
+                onClick={() => setIsQuickNavOpen(false)}
+              >
+                <span>{section.indexLabel}</span>
+                <strong>{section.title}</strong>
+              </a>
+            ))}
+          </nav>
+        </div>
+
+        <button
+          type="button"
+          className={isQuickNavOpen ? "quick-nav-toggle is-open" : "quick-nav-toggle"}
+          aria-expanded={isQuickNavOpen}
+          aria-controls="report-quick-nav-panel"
+          aria-label="切换快速跳转菜单"
+          onClick={() => setIsQuickNavOpen((current) => !current)}
+        >
+          <span className="quick-nav-toggle-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M5 7H19"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+              />
+              <path
+                d="M5 12H19"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+              />
+              <path
+                d="M5 17H14"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+              />
+            </svg>
+          </span>
+        </button>
       </div>
 
       <footer className="report-footer" aria-label="版权信息">
