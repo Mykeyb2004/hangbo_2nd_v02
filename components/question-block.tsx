@@ -1,6 +1,7 @@
 "use client";
 
 import { BarChart } from "@/components/bar-chart";
+import { RadarChart } from "@/components/radar-chart";
 import { ScoreRing } from "@/components/score-ring";
 import { StatTable } from "@/components/stat-table";
 import {
@@ -14,7 +15,7 @@ import {
 import type {
   Branch,
   FilterTab,
-  MatrixItem,
+  MatrixQuestion,
   Question,
   StatBlock,
 } from "@/lib/report-types";
@@ -27,6 +28,31 @@ type QuestionBlockProps = {
 };
 
 type MetricDisplayMode = "distribution" | "score";
+
+function buildRadarMetrics(
+  items: Array<{
+    title: string;
+    statsByAudience: Record<string, StatBlock>;
+  }>,
+  activeKey: string,
+) {
+  return items
+    .filter((item) => hasBaseSamples(item.statsByAudience[activeKey]))
+    .map((item) => {
+      const stat = item.statsByAudience[activeKey];
+
+      if (typeof stat.meanScore !== "number") {
+        return null;
+      }
+
+      return {
+        label: item.title,
+        value: stat.meanScore,
+        validCount: stat.validCount,
+      };
+    })
+    .filter((metric): metric is NonNullable<typeof metric> => metric !== null);
+}
 
 function EmptyState({ message }: { message: string }) {
   return (
@@ -112,6 +138,7 @@ function BranchPanels({
   const branchHasAnyData = branch.items.some((item) =>
     hasBaseSamples(item.statsByAudience[activeKey]),
   );
+  const radarMetrics = buildRadarMetrics(branch.items, activeKey);
 
   if (!isOverall && !isApplicable) {
     return null;
@@ -129,17 +156,26 @@ function BranchPanels({
         <span className="branch-badge">仅对适用样本统计</span>
       </div>
       {branchHasAnyData ? (
-        <div className="matrix-grid">
-          {branch.items.map((item) => (
-            <MetricPanel
-              key={item.id}
-              title={item.title}
-              stat={item.statsByAudience[activeKey]}
+        <>
+          <div className="matrix-grid">
+            {branch.items.map((item) => (
+              <MetricPanel
+                key={item.id}
+                title={item.title}
+                stat={item.statsByAudience[activeKey]}
+                accent={accent}
+                displayMode="score"
+              />
+            ))}
+          </div>
+          {radarMetrics.length >= 3 ? (
+            <RadarChart
+              metrics={radarMetrics}
               accent={accent}
-              displayMode="score"
+              contextLabel={`${branch.label}：`}
             />
-          ))}
-        </div>
+          ) : null}
+        </>
       ) : (
         <EmptyState message="当前分支暂无有效作答，保留题目结构但不展开统计。" />
       )}
@@ -148,34 +184,44 @@ function BranchPanels({
 }
 
 function MatrixPanels({
-  items,
+  question,
   activeKey,
   accent,
 }: {
-  items: MatrixItem[];
+  question: MatrixQuestion;
   activeKey: string;
   accent: string;
 }) {
-  const visibleItems = items.filter((item) =>
+  const visibleItems = question.items.filter((item) =>
     hasBaseSamples(item.statsByAudience[activeKey]),
   );
+  const radarMetrics = buildRadarMetrics(question.items, activeKey);
 
   if (visibleItems.length === 0) {
     return <EmptyState message="当前客群下该题没有有效作答。" />;
   }
 
   return (
-    <div className="matrix-grid">
-      {items.map((item) => (
-        <MetricPanel
-          key={item.id}
-          title={item.title}
-          stat={item.statsByAudience[activeKey]}
+    <>
+      <div className="matrix-grid">
+        {question.items.map((item) => (
+          <MetricPanel
+            key={item.id}
+            title={item.title}
+            stat={item.statsByAudience[activeKey]}
+            accent={accent}
+            displayMode="score"
+          />
+        ))}
+      </div>
+      {radarMetrics.length >= 3 ? (
+        <RadarChart
+          metrics={radarMetrics}
           accent={accent}
-          displayMode="score"
+          contextLabel={`${question.title}：`}
         />
-      ))}
-    </div>
+      ) : null}
+    </>
   );
 }
 
@@ -245,7 +291,7 @@ export function QuestionBlock({
 
       {isMatrixQuestion(question) ? (
         <MatrixPanels
-          items={question.items}
+          question={question}
           activeKey={resolvedActiveKey}
           accent={accent}
         />
