@@ -35,6 +35,7 @@
   - Updated the homepage to read `year/month` from query params.
   - Added year/month switching UI to the report dashboard.
   - Reworked year/month switching from chip-style archive blocks into compact dropdown controls in the hero area.
+  - Moved the compact year/month selectors onto the same row as the hero meta pills and right-aligned them.
   - Copied the existing report into `data/reports/2026/03.json` as the first archive entry.
   - Ran a production build to verify the changes.
 - Files created/modified:

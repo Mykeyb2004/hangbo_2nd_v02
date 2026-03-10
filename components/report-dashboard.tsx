@@ -271,104 +271,92 @@ export function ReportDashboard({ data, archive }: ReportDashboardProps) {
             <span>样本总量 {data.meta.responseCount}</span>
             <span>客群页签 {data.meta.filters.length}</span>
             {archive ? <span>归档期数 {archive.totalReports}</span> : null}
+            {archive ? (
+              <div className="hero-meta-controls" aria-label="报告年月切换">
+                <div className="report-select-shell is-compact">
+                  <span className="report-select-label is-compact" aria-hidden="true">
+                    {archive.current.year}年
+                  </span>
+                  <select
+                    aria-label="选择年份"
+                    className="report-select is-overlay"
+                    value={String(archive.current.year)}
+                    disabled={isPeriodPending}
+                    onChange={(event) => {
+                      const nextYear = Number(event.target.value);
+                      const nextYearEntry = archive.years.find(
+                        (yearItem) => yearItem.year === nextYear,
+                      );
+                      if (!nextYearEntry) {
+                        return;
+                      }
+                      const matchingMonth = nextYearEntry.months.find(
+                        (monthItem) => monthItem.month === archive.current.month,
+                      );
+                      const fallbackMonth =
+                        matchingMonth ??
+                        nextYearEntry.months[nextYearEntry.months.length - 1];
+                      navigateToPeriod(nextYear, fallbackMonth.month);
+                    }}
+                  >
+                    {archive.years.map((yearItem) => (
+                      <option key={yearItem.year} value={yearItem.year}>
+                        {yearItem.year}年
+                      </option>
+                    ))}
+                  </select>
+                  <span className="report-select-icon" aria-hidden="true">
+                    <svg viewBox="0 0 20 20" fill="none">
+                      <path
+                        d="M5 7.5L10 12.5L15 7.5"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <div className="report-select-shell is-compact">
+                  <span className="report-select-label is-compact" aria-hidden="true">
+                    {String(archive.current.month).padStart(2, "0")}月
+                  </span>
+                  <select
+                    aria-label="选择月份"
+                    className="report-select is-overlay"
+                    value={String(archive.current.month).padStart(2, "0")}
+                    disabled={isPeriodPending || !activeYear}
+                    onChange={(event) => {
+                      navigateToPeriod(
+                        archive.current.year,
+                        Number(event.target.value),
+                      );
+                    }}
+                  >
+                    {activeYear?.months.map((monthItem) => (
+                      <option
+                        key={monthItem.id}
+                        value={String(monthItem.month).padStart(2, "0")}
+                      >
+                        {String(monthItem.month).padStart(2, "0")}月
+                      </option>
+                    ))}
+                  </select>
+                  <span className="report-select-icon" aria-hidden="true">
+                    <svg viewBox="0 0 20 20" fill="none">
+                      <path
+                        d="M5 7.5L10 12.5L15 7.5"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            ) : null}
           </div>
-          {archive ? (
-            <section className="report-period-toolbar" aria-label="报告年月切换">
-              <div className="report-period-copy">
-                <span className="hero-kicker">查看期次</span>
-                <p>使用年份和月份切换归档报告。</p>
-              </div>
-              <div className="report-period-controls">
-                <label className="report-select-field">
-                  <span>年份</span>
-                  <div className="report-select-shell">
-                    <select
-                      aria-label="选择年份"
-                      className="report-select"
-                      value={String(archive.current.year)}
-                      disabled={isPeriodPending}
-                      onChange={(event) => {
-                        const nextYear = Number(event.target.value);
-                        const nextYearEntry = archive.years.find(
-                          (yearItem) => yearItem.year === nextYear,
-                        );
-                        if (!nextYearEntry) {
-                          return;
-                        }
-                        const matchingMonth = nextYearEntry.months.find(
-                          (monthItem) => monthItem.month === archive.current.month,
-                        );
-                        const fallbackMonth =
-                          matchingMonth ??
-                          nextYearEntry.months[nextYearEntry.months.length - 1];
-                        navigateToPeriod(nextYear, fallbackMonth.month);
-                      }}
-                    >
-                      {archive.years.map((yearItem) => (
-                        <option key={yearItem.year} value={yearItem.year}>
-                          {yearItem.year}年
-                        </option>
-                      ))}
-                    </select>
-                    <span className="report-select-icon" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" fill="none">
-                        <path
-                          d="M5 7.5L10 12.5L15 7.5"
-                          stroke="currentColor"
-                          strokeWidth="1.8"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                </label>
-                <label className="report-select-field">
-                  <span>月份</span>
-                  <div className="report-select-shell">
-                    <select
-                      aria-label="选择月份"
-                      className="report-select"
-                      value={String(archive.current.month).padStart(2, "0")}
-                      disabled={isPeriodPending || !activeYear}
-                      onChange={(event) => {
-                        navigateToPeriod(
-                          archive.current.year,
-                          Number(event.target.value),
-                        );
-                      }}
-                    >
-                      {activeYear?.months.map((monthItem) => (
-                        <option
-                          key={monthItem.id}
-                          value={String(monthItem.month).padStart(2, "0")}
-                        >
-                          {String(monthItem.month).padStart(2, "0")}月
-                        </option>
-                      ))}
-                    </select>
-                    <span className="report-select-icon" aria-hidden="true">
-                      <svg viewBox="0 0 20 20" fill="none">
-                        <path
-                          d="M5 7.5L10 12.5L15 7.5"
-                          stroke="currentColor"
-                          strokeWidth="1.8"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </span>
-                  </div>
-                </label>
-              </div>
-              <div className="report-period-summary" aria-live="polite">
-                <strong>{archive.current.label}</strong>
-                <span>
-                  {isPeriodPending ? "正在切换报告..." : `共 ${archive.totalReports} 期报告`}
-                </span>
-              </div>
-            </section>
-          ) : null}
         </div>
 
         <div className="highlight-grid">
