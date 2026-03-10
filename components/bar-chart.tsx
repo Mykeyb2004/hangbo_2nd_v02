@@ -3,10 +3,9 @@ import type { DistributionOption } from "@/lib/report-types";
 
 type BarChartProps = {
   options: DistributionOption[];
-  accent: string;
 };
 
-export function BarChart({ options, accent }: BarChartProps) {
+export function BarChart({ options }: BarChartProps) {
   const maxRatio = getMaxRatio(options);
 
   return (
@@ -25,7 +24,6 @@ export function BarChart({ options, accent }: BarChartProps) {
                 className="bar-chart-fill"
                 style={{
                   width: `${normalizedWidth}%`,
-                  background: `linear-gradient(90deg, ${accent}, rgba(255, 255, 255, 0.92))`,
                 }}
               />
             </div>

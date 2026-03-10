@@ -113,7 +113,7 @@ function MetricPanel({
         ) : (
           <>
             <StatTable options={stat.options} />
-            <BarChart options={stat.options} accent={accent} />
+            <BarChart options={stat.options} />
           </>
         )}
       </div>
