@@ -4,9 +4,7 @@
   "private": true,
   "scripts": {
     "prepare-data": "uv run python scripts/build_survey_report_data.py",
-    "predev": "npm run prepare-data",
     "dev": "next dev",
-    "prebuild": "npm run prepare-data",
     "build": "next build",
     "start": "next start"
   },
