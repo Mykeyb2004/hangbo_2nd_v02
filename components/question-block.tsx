@@ -1,6 +1,7 @@
 "use client";
 
 import { BarChart } from "@/components/bar-chart";
+import { ScoreRing } from "@/components/score-ring";
 import { StatTable } from "@/components/stat-table";
 import {
   buildStatPills,
@@ -25,6 +26,8 @@ type QuestionBlockProps = {
   onFilterChange: (key: string) => void;
 };
 
+type MetricDisplayMode = "distribution" | "score";
+
 function EmptyState({ message }: { message: string }) {
   return (
     <div className="empty-state">
@@ -39,15 +42,27 @@ function MetricPanel({
   stat,
   accent,
   note,
+  displayMode,
 }: {
   title: string;
   stat: StatBlock;
   accent: string;
   note?: string;
+  displayMode: MetricDisplayMode;
 }) {
   if (!hasBaseSamples(stat)) {
     return <EmptyState message="当前客群下该题没有有效基础样本。" />;
   }
+
+  if (displayMode === "score" && (stat.validCount === 0 || typeof stat.meanScore !== "number")) {
+    return <EmptyState message="当前客群下该题暂无有效评分作答。" />;
+  }
+
+  const resolvedNote =
+    note ??
+    (displayMode === "score"
+      ? "平均分按有效作答样本直接计算；非 1-10 的值已作为缺失处理。"
+      : stat.note);
 
   return (
     <article className="metric-panel">
@@ -61,10 +76,20 @@ function MetricPanel({
           ))}
         </div>
       </div>
-      <p className="metric-note">{note ?? stat.note}</p>
-      <div className="metric-layout">
-        <StatTable options={stat.options} />
-        <BarChart options={stat.options} accent={accent} />
+      <p className="metric-note">{resolvedNote}</p>
+      <div
+        className={
+          displayMode === "score" ? "metric-layout metric-layout-score" : "metric-layout"
+        }
+      >
+        {displayMode === "score" ? (
+          <ScoreRing stat={stat} />
+        ) : (
+          <>
+            <StatTable options={stat.options} />
+            <BarChart options={stat.options} accent={accent} />
+          </>
+        )}
       </div>
     </article>
   );
@@ -111,6 +136,7 @@ function BranchPanels({
               title={item.title}
               stat={item.statsByAudience[activeKey]}
               accent={accent}
+              displayMode="score"
             />
           ))}
         </div>
@@ -146,6 +172,7 @@ function MatrixPanels({
           title={item.title}
           stat={item.statsByAudience[activeKey]}
           accent={accent}
+          displayMode="score"
         />
       ))}
     </div>
@@ -212,6 +239,7 @@ export function QuestionBlock({
             question.description ||
             question.statsByAudience[resolvedActiveKey]?.note
           }
+          displayMode={question.kind === "rating" ? "score" : "distribution"}
         />
       ) : null}
 

@@ -61,9 +61,6 @@ export function buildStatPills(stat: StatBlock) {
   if (typeof stat.meanScore === "number") {
     pills.push(`均值 ${stat.meanScore.toFixed(2)}`);
   }
-  if (typeof stat.highScoreRate === "number") {
-    pills.push(`8-10分 ${(stat.highScoreRate * 100).toFixed(1)}%`);
-  }
   return pills;
 }
 
