@@ -35,6 +35,43 @@ import reportData from "@/data/report-data.json";
 
 现在 `npm run dev` 和 `npm run build` 都不会自动生成数据。`prepare-data` 仅作为可选离线工具保留，供你在需要时手动从 Excel 重新生成 `data/report-data.json`。
 
+## 从 `data.xlsx` 生成 JSON
+
+仓库约定使用 `uv`。如果你更新了 [data/data.xlsx](/Users/zhangqijin/PycharmProjects/hangbo_2nd_v02/data/data.xlsx) 或 [outputs/survey_field_mapping.csv](/Users/zhangqijin/PycharmProjects/hangbo_2nd_v02/outputs/survey_field_mapping.csv)，可以执行：
+
+```bash
+uv run python scripts/build_survey_report_data.py
+```
+
+默认会生成或覆盖：
+
+- [data/report-data.json](/Users/zhangqijin/PycharmProjects/hangbo_2nd_v02/data/report-data.json)
+
+如果你想输出到其他文件，也可以显式指定路径：
+
+```bash
+uv run python scripts/build_survey_report_data.py --output data/reports/2026/03.json
+```
+
+当前脚本默认不会自动同时写入 `data/report-data.json` 和 `data/reports/` 两个位置。如果你需要同时更新“默认展示数据”和“历史归档数据”，需要分别执行两次，或者在生成后手动复制文件。
+
+## `data/reports` 命名规则
+
+服务端优先读取 [data/reports](/Users/zhangqijin/PycharmProjects/hangbo_2nd_v02/data/reports) 下的归档 JSON；只有在该目录不存在可用归档时，才会回退到 [data/report-data.json](/Users/zhangqijin/PycharmProjects/hangbo_2nd_v02/data/report-data.json)。
+
+归档目录和文件名必须遵循下面的规则：
+
+- 年目录使用四位数字：`data/reports/YYYY/`
+- 月文件使用两位数字：`MM.json`
+- 合法示例：`data/reports/2026/03.json`
+- 非法示例：`data/reports/26/3.json`、`data/reports/2026/3.json`、`data/reports/2026/March.json`
+
+页面通过 URL 参数选择归档月份，例如：
+
+- `/?year=2026&month=03`
+
+如果请求的年月不存在，页面会自动回退到当前归档目录中最新的一期数据。
+
 ## `data.xlsx` 是否需要预处理
 
 如果你继续使用 Excel 作为原始来源，那么需要先做离线预处理；但这一步不再绑定到构建流程。
@@ -60,7 +97,7 @@ import reportData from "@/data/report-data.json";
 
 ## 本地运行
 
-仓库约定使用 `uv`。前端开发默认直接读取现成的 `data/report-data.json`。
+前端开发默认直接读取现成的 `data/report-data.json`，或者在存在归档时读取 `data/reports` 下最新一期。
 
 ```bash
 npm run dev
@@ -77,6 +114,33 @@ uv run python scripts/build_survey_report_data.py
 ```bash
 npm run build
 ```
+
+整理可部署目录：
+
+```bash
+npm run bundle
+```
+
+执行后会生成 `dist/`，其中包含：
+
+- `server.js`
+- `.next/static`
+- `public/`
+- `data/`
+
+进入 `dist/` 后可直接执行：
+
+```bash
+node server.js
+```
+
+如果需要把发布目录压缩成单个包：
+
+```bash
+npm run bundle:archive
+```
+
+执行后会在项目根目录生成 `dist.tar.gz`。
 
 ## 当前实现特点
 

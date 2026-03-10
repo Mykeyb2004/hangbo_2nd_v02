@@ -6,7 +6,9 @@
     "prepare-data": "uv run python scripts/build_survey_report_data.py",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "bundle": "node scripts/package-standalone.mjs",
+    "bundle:archive": "node scripts/archive-standalone.mjs"
   },
   "dependencies": {
     "next": "^15.0.0",
