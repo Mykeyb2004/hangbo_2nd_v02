@@ -1109,6 +1109,10 @@ select {
     padding: 18px 14px 36px;
   }
 
+  .question-heading h3 {
+    line-height: 1.24;
+  }
+
   .hero-card,
   .section-card,
   .question-card,
