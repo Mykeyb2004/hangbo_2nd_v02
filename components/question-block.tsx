@@ -167,10 +167,6 @@ export function QuestionBlock({
   );
   const accent = CHART_ACCENTS[activeIndex % CHART_ACCENTS.length];
   const activeFilter = filters[activeIndex] ?? filters[0];
-  const code =
-    "code" in question && typeof question.code === "string"
-      ? question.code
-      : "Q15-Q17";
 
   return (
     <article
@@ -179,7 +175,6 @@ export function QuestionBlock({
     >
       <div className="question-head">
         <div className="question-heading">
-          <span className="question-code">{code}</span>
           <div>
             <h3>{question.title}</h3>
           </div>

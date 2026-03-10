@@ -128,8 +128,7 @@ select {
 }
 
 .hero-kicker,
-.nav-kicker,
-.question-code {
+.nav-kicker {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -458,12 +457,7 @@ select {
 }
 
 .question-heading {
-  grid-template-columns: auto 1fr;
   align-items: flex-start;
-}
-
-.question-code {
-  padding-top: 6px;
 }
 
 .tab-list {
