@@ -2,7 +2,7 @@
   "meta": {
     "title": "杭州国际博览中心二期（测试）展会体验与服务反馈统计报告",
     "subtitle": "",
-    "generatedAt": "2026-03-10T17:20:32.399445+00:00",
+    "generatedAt": "2026-03-10T22:46:13.409353+00:00",
     "responseCount": 74,
     "audienceQuestion": "您本次的身份是？",
     "filters": [
@@ -17,7 +17,7 @@
         "key": "aud-1-group",
         "label": "参展商",
         "baseLabel": "参展商",
-        "count": 29,
+        "count": 30,
         "rawValue": "1. 参展商"
       },
       {
@@ -33,13 +33,6 @@
         "baseLabel": "普通观众",
         "count": 18,
         "rawValue": "3. 普通观众"
-      },
-      {
-        "key": "aud-4-group",
-        "label": "其他 · 电商服务商",
-        "baseLabel": "其他",
-        "count": 1,
-        "rawValue": "6. 其他-电商服务商"
       }
     ],
     "notes": [],
@@ -55,7 +48,7 @@
         "key": "aud-1-group",
         "label": "参展商",
         "baseLabel": "参展商",
-        "count": 29,
+        "count": 30,
         "rawValue": "1. 参展商"
       },
       "aud-2-group": {
@@ -71,13 +64,6 @@
         "baseLabel": "普通观众",
         "count": 18,
         "rawValue": "3. 普通观众"
-      },
-      "aud-4-group": {
-        "key": "aud-4-group",
-        "label": "其他 · 电商服务商",
-        "baseLabel": "其他",
-        "count": 1,
-        "rawValue": "6. 其他-电商服务商"
       }
     }
   },
@@ -125,8 +111,8 @@
               "options": [
                 {
                   "label": "参展商",
-                  "count": 29,
-                  "ratio": 0.3919
+                  "count": 30,
+                  "ratio": 0.4054
                 },
                 {
                   "label": "专业观众",
@@ -150,20 +136,20 @@
                 },
                 {
                   "label": "其他",
-                  "count": 1,
-                  "ratio": 0.0135
+                  "count": 0,
+                  "ratio": 0.0
                 }
               ],
               "note": "比例按有效作答样本计算。"
             },
             "aud-1-group": {
-              "baseCount": 29,
-              "validCount": 29,
+              "baseCount": 30,
+              "validCount": 30,
               "missingCount": 0,
               "options": [
                 {
                   "label": "参展商",
-                  "count": 29,
+                  "count": 30,
                   "ratio": 1.0
                 },
                 {
@@ -269,44 +255,6 @@
                 }
               ],
               "note": "比例按有效作答样本计算。"
-            },
-            "aud-4-group": {
-              "baseCount": 1,
-              "validCount": 1,
-              "missingCount": 0,
-              "options": [
-                {
-                  "label": "参展商",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "专业观众",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "普通观众",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "展会服务商/搭建商/物流商",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "主办方/协办方工作人员",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "其他",
-                  "count": 1,
-                  "ratio": 1.0
-                }
-              ],
-              "note": "比例按有效作答样本计算。"
             }
           }
         },
@@ -337,19 +285,19 @@
               "note": "比例按有效作答样本计算。"
             },
             "aud-1-group": {
-              "baseCount": 29,
-              "validCount": 29,
+              "baseCount": 30,
+              "validCount": 30,
               "missingCount": 0,
               "options": [
                 {
                   "label": "男",
-                  "count": 18,
-                  "ratio": 0.6207
+                  "count": 19,
+                  "ratio": 0.6333
                 },
                 {
                   "label": "女",
                   "count": 11,
-                  "ratio": 0.3793
+                  "ratio": 0.3667
                 }
               ],
               "note": "比例按有效作答样本计算。"
@@ -386,24 +334,6 @@
                   "label": "女",
                   "count": 6,
                   "ratio": 0.3333
-                }
-              ],
-              "note": "比例按有效作答样本计算。"
-            },
-            "aud-4-group": {
-              "baseCount": 1,
-              "validCount": 1,
-              "missingCount": 0,
-              "options": [
-                {
-                  "label": "男",
-                  "count": 1,
-                  "ratio": 1.0
-                },
-                {
-                  "label": "女",
-                  "count": 0,
-                  "ratio": 0.0
                 }
               ],
               "note": "比例按有效作答样本计算。"
@@ -452,29 +382,29 @@
               "note": "比例按有效作答样本计算。"
             },
             "aud-1-group": {
-              "baseCount": 29,
-              "validCount": 29,
+              "baseCount": 30,
+              "validCount": 30,
               "missingCount": 0,
               "options": [
                 {
                   "label": "18-25岁",
                   "count": 2,
-                  "ratio": 0.069
+                  "ratio": 0.0667
                 },
                 {
                   "label": "26-35岁",
                   "count": 16,
-                  "ratio": 0.5517
+                  "ratio": 0.5333
                 },
                 {
                   "label": "36-45岁",
                   "count": 11,
-                  "ratio": 0.3793
+                  "ratio": 0.3667
                 },
                 {
                   "label": "46-55岁",
-                  "count": 0,
-                  "ratio": 0.0
+                  "count": 1,
+                  "ratio": 0.0333
                 },
                 {
                   "label": "56岁以上",
@@ -541,39 +471,6 @@
                   "label": "46-55岁",
                   "count": 0,
                   "ratio": 0.0
-                },
-                {
-                  "label": "56岁以上",
-                  "count": 0,
-                  "ratio": 0.0
-                }
-              ],
-              "note": "比例按有效作答样本计算。"
-            },
-            "aud-4-group": {
-              "baseCount": 1,
-              "validCount": 1,
-              "missingCount": 0,
-              "options": [
-                {
-                  "label": "18-25岁",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "26-35岁",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "36-45岁",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "46-55岁",
-                  "count": 1,
-                  "ratio": 1.0
                 },
                 {
                   "label": "56岁以上",
@@ -662,14 +559,14 @@
               "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
             },
             "aud-1-group": {
-              "baseCount": 29,
-              "validCount": 29,
+              "baseCount": 30,
+              "validCount": 30,
               "missingCount": 0,
               "options": [
                 {
                   "label": "1",
                   "count": 5,
-                  "ratio": 0.1724
+                  "ratio": 0.1667
                 },
                 {
                   "label": "2",
@@ -684,41 +581,41 @@
                 {
                   "label": "4",
                   "count": 1,
-                  "ratio": 0.0345
+                  "ratio": 0.0333
                 },
                 {
                   "label": "5",
                   "count": 2,
-                  "ratio": 0.069
+                  "ratio": 0.0667
                 },
                 {
                   "label": "6",
                   "count": 1,
-                  "ratio": 0.0345
+                  "ratio": 0.0333
                 },
                 {
                   "label": "7",
                   "count": 5,
-                  "ratio": 0.1724
+                  "ratio": 0.1667
                 },
                 {
                   "label": "8",
-                  "count": 7,
-                  "ratio": 0.2414
+                  "count": 8,
+                  "ratio": 0.2667
                 },
                 {
                   "label": "9",
                   "count": 4,
-                  "ratio": 0.1379
+                  "ratio": 0.1333
                 },
                 {
                   "label": "10",
                   "count": 4,
-                  "ratio": 0.1379
+                  "ratio": 0.1333
                 }
               ],
-              "meanScore": 6.62,
-              "highScoreRate": 0.5172,
+              "meanScore": 6.67,
+              "highScoreRate": 0.5333,
               "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
             },
             "aud-2-group": {
@@ -840,66 +737,6 @@
               "meanScore": 7.56,
               "highScoreRate": 0.7778,
               "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-            },
-            "aud-4-group": {
-              "baseCount": 1,
-              "validCount": 1,
-              "missingCount": 0,
-              "options": [
-                {
-                  "label": "1",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "2",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "3",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "4",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "5",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "6",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "7",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "8",
-                  "count": 1,
-                  "ratio": 1.0
-                },
-                {
-                  "label": "9",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "10",
-                  "count": 0,
-                  "ratio": 0.0
-                }
-              ],
-              "meanScore": 8.0,
-              "highScoreRate": 1.0,
-              "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
             }
           }
         },
@@ -940,29 +777,29 @@
               "note": "比例按有效作答样本计算。"
             },
             "aud-1-group": {
-              "baseCount": 29,
-              "validCount": 29,
+              "baseCount": 30,
+              "validCount": 30,
               "missingCount": 0,
               "options": [
                 {
                   "label": "超出预期",
                   "count": 3,
-                  "ratio": 0.1034
+                  "ratio": 0.1
                 },
                 {
                   "label": "基本符合预期",
-                  "count": 13,
-                  "ratio": 0.4483
+                  "count": 14,
+                  "ratio": 0.4667
                 },
                 {
                   "label": "略低于预期",
                   "count": 8,
-                  "ratio": 0.2759
+                  "ratio": 0.2667
                 },
                 {
                   "label": "明显低于预期",
                   "count": 5,
-                  "ratio": 0.1724
+                  "ratio": 0.1667
                 }
               ],
               "note": "比例按有效作答样本计算。"
@@ -1022,34 +859,6 @@
                 }
               ],
               "note": "比例按有效作答样本计算。"
-            },
-            "aud-4-group": {
-              "baseCount": 1,
-              "validCount": 1,
-              "missingCount": 0,
-              "options": [
-                {
-                  "label": "超出预期",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "基本符合预期",
-                  "count": 1,
-                  "ratio": 1.0
-                },
-                {
-                  "label": "略低于预期",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "明显低于预期",
-                  "count": 0,
-                  "ratio": 0.0
-                }
-              ],
-              "note": "比例按有效作答样本计算。"
             }
           }
         },
@@ -1090,19 +899,19 @@
               "note": "比例按有效作答样本计算。"
             },
             "aud-1-group": {
-              "baseCount": 29,
-              "validCount": 29,
+              "baseCount": 30,
+              "validCount": 30,
               "missingCount": 0,
               "options": [
                 {
                   "label": "愿意",
-                  "count": 14,
-                  "ratio": 0.4828
+                  "count": 15,
+                  "ratio": 0.5
                 },
                 {
                   "label": "视改善情况而定",
                   "count": 11,
-                  "ratio": 0.3793
+                  "ratio": 0.3667
                 },
                 {
                   "label": "不太愿意",
@@ -1112,7 +921,7 @@
                 {
                   "label": "不愿意",
                   "count": 4,
-                  "ratio": 0.1379
+                  "ratio": 0.1333
                 }
               ],
               "note": "比例按有效作答样本计算。"
@@ -1169,34 +978,6 @@
                   "label": "不愿意",
                   "count": 1,
                   "ratio": 0.0556
-                }
-              ],
-              "note": "比例按有效作答样本计算。"
-            },
-            "aud-4-group": {
-              "baseCount": 1,
-              "validCount": 1,
-              "missingCount": 0,
-              "options": [
-                {
-                  "label": "愿意",
-                  "count": 1,
-                  "ratio": 1.0
-                },
-                {
-                  "label": "视改善情况而定",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "不太愿意",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "不愿意",
-                  "count": 0,
-                  "ratio": 0.0
                 }
               ],
               "note": "比例按有效作答样本计算。"
@@ -1284,14 +1065,14 @@
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-1-group": {
-                  "baseCount": 29,
-                  "validCount": 28,
+                  "baseCount": 30,
+                  "validCount": 29,
                   "missingCount": 1,
                   "options": [
                     {
                       "label": "1",
                       "count": 3,
-                      "ratio": 0.1071
+                      "ratio": 0.1034
                     },
                     {
                       "label": "2",
@@ -1305,42 +1086,42 @@
                     },
                     {
                       "label": "4",
-                      "count": 0,
-                      "ratio": 0.0
+                      "count": 1,
+                      "ratio": 0.0345
                     },
                     {
                       "label": "5",
                       "count": 1,
-                      "ratio": 0.0357
+                      "ratio": 0.0345
                     },
                     {
                       "label": "6",
                       "count": 1,
-                      "ratio": 0.0357
+                      "ratio": 0.0345
                     },
                     {
                       "label": "7",
                       "count": 1,
-                      "ratio": 0.0357
+                      "ratio": 0.0345
                     },
                     {
                       "label": "8",
                       "count": 8,
-                      "ratio": 0.2857
+                      "ratio": 0.2759
                     },
                     {
                       "label": "9",
                       "count": 10,
-                      "ratio": 0.3571
+                      "ratio": 0.3448
                     },
                     {
                       "label": "10",
                       "count": 4,
-                      "ratio": 0.1429
+                      "ratio": 0.1379
                     }
                   ],
-                  "meanScore": 7.68,
-                  "highScoreRate": 0.7857,
+                  "meanScore": 7.55,
+                  "highScoreRate": 0.7586,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-2-group": {
@@ -1462,66 +1243,6 @@
                   "meanScore": 8.06,
                   "highScoreRate": 0.875,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                },
-                "aud-4-group": {
-                  "baseCount": 1,
-                  "validCount": 1,
-                  "missingCount": 0,
-                  "options": [
-                    {
-                      "label": "1",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "2",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "3",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "4",
-                      "count": 1,
-                      "ratio": 1.0
-                    },
-                    {
-                      "label": "5",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "6",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "7",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "8",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "9",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "10",
-                      "count": 0,
-                      "ratio": 0.0
-                    }
-                  ],
-                  "meanScore": 4.0,
-                  "highScoreRate": 0.0,
-                  "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 }
               }
             },
@@ -1590,14 +1311,14 @@
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-1-group": {
-                  "baseCount": 29,
-                  "validCount": 27,
+                  "baseCount": 30,
+                  "validCount": 28,
                   "missingCount": 2,
                   "options": [
                     {
                       "label": "1",
                       "count": 7,
-                      "ratio": 0.2593
+                      "ratio": 0.25
                     },
                     {
                       "label": "2",
@@ -1622,31 +1343,31 @@
                     {
                       "label": "6",
                       "count": 2,
-                      "ratio": 0.0741
+                      "ratio": 0.0714
                     },
                     {
                       "label": "7",
                       "count": 1,
-                      "ratio": 0.037
+                      "ratio": 0.0357
                     },
                     {
                       "label": "8",
-                      "count": 5,
-                      "ratio": 0.1852
+                      "count": 6,
+                      "ratio": 0.2143
                     },
                     {
                       "label": "9",
                       "count": 7,
-                      "ratio": 0.2593
+                      "ratio": 0.25
                     },
                     {
                       "label": "10",
                       "count": 5,
-                      "ratio": 0.1852
+                      "ratio": 0.1786
                     }
                   ],
-                  "meanScore": 6.63,
-                  "highScoreRate": 0.6296,
+                  "meanScore": 6.68,
+                  "highScoreRate": 0.6429,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-2-group": {
@@ -1768,66 +1489,6 @@
                   "meanScore": 6.81,
                   "highScoreRate": 0.625,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                },
-                "aud-4-group": {
-                  "baseCount": 1,
-                  "validCount": 1,
-                  "missingCount": 0,
-                  "options": [
-                    {
-                      "label": "1",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "2",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "3",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "4",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "5",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "6",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "7",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "8",
-                      "count": 1,
-                      "ratio": 1.0
-                    },
-                    {
-                      "label": "9",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "10",
-                      "count": 0,
-                      "ratio": 0.0
-                    }
-                  ],
-                  "meanScore": 8.0,
-                  "highScoreRate": 1.0,
-                  "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 }
               }
             },
@@ -1896,14 +1557,14 @@
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-1-group": {
-                  "baseCount": 29,
-                  "validCount": 26,
+                  "baseCount": 30,
+                  "validCount": 27,
                   "missingCount": 3,
                   "options": [
                     {
                       "label": "1",
                       "count": 3,
-                      "ratio": 0.1154
+                      "ratio": 0.1111
                     },
                     {
                       "label": "2",
@@ -1923,7 +1584,7 @@
                     {
                       "label": "5",
                       "count": 2,
-                      "ratio": 0.0769
+                      "ratio": 0.0741
                     },
                     {
                       "label": "6",
@@ -1933,26 +1594,26 @@
                     {
                       "label": "7",
                       "count": 1,
-                      "ratio": 0.0385
+                      "ratio": 0.037
                     },
                     {
                       "label": "8",
                       "count": 8,
-                      "ratio": 0.3077
+                      "ratio": 0.2963
                     },
                     {
                       "label": "9",
                       "count": 8,
-                      "ratio": 0.3077
+                      "ratio": 0.2963
                     },
                     {
                       "label": "10",
-                      "count": 4,
-                      "ratio": 0.1538
+                      "count": 5,
+                      "ratio": 0.1852
                     }
                   ],
-                  "meanScore": 7.54,
-                  "highScoreRate": 0.7692,
+                  "meanScore": 7.63,
+                  "highScoreRate": 0.7778,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-2-group": {
@@ -2074,66 +1735,6 @@
                   "meanScore": 8.19,
                   "highScoreRate": 0.8125,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                },
-                "aud-4-group": {
-                  "baseCount": 1,
-                  "validCount": 1,
-                  "missingCount": 0,
-                  "options": [
-                    {
-                      "label": "1",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "2",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "3",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "4",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "5",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "6",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "7",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "8",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "9",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "10",
-                      "count": 1,
-                      "ratio": 1.0
-                    }
-                  ],
-                  "meanScore": 10.0,
-                  "highScoreRate": 1.0,
-                  "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 }
               }
             },
@@ -2202,14 +1803,14 @@
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-1-group": {
-                  "baseCount": 29,
-                  "validCount": 25,
+                  "baseCount": 30,
+                  "validCount": 26,
                   "missingCount": 4,
                   "options": [
                     {
                       "label": "1",
                       "count": 2,
-                      "ratio": 0.08
+                      "ratio": 0.0769
                     },
                     {
                       "label": "2",
@@ -2223,13 +1824,13 @@
                     },
                     {
                       "label": "4",
-                      "count": 0,
-                      "ratio": 0.0
+                      "count": 1,
+                      "ratio": 0.0385
                     },
                     {
                       "label": "5",
                       "count": 2,
-                      "ratio": 0.08
+                      "ratio": 0.0769
                     },
                     {
                       "label": "6",
@@ -2239,26 +1840,26 @@
                     {
                       "label": "7",
                       "count": 2,
-                      "ratio": 0.08
+                      "ratio": 0.0769
                     },
                     {
                       "label": "8",
                       "count": 9,
-                      "ratio": 0.36
+                      "ratio": 0.3462
                     },
                     {
                       "label": "9",
                       "count": 6,
-                      "ratio": 0.24
+                      "ratio": 0.2308
                     },
                     {
                       "label": "10",
                       "count": 4,
-                      "ratio": 0.16
+                      "ratio": 0.1538
                     }
                   ],
-                  "meanScore": 7.68,
-                  "highScoreRate": 0.76,
+                  "meanScore": 7.54,
+                  "highScoreRate": 0.7308,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-2-group": {
@@ -2380,66 +1981,6 @@
                   "meanScore": 8.62,
                   "highScoreRate": 0.9375,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                },
-                "aud-4-group": {
-                  "baseCount": 1,
-                  "validCount": 1,
-                  "missingCount": 0,
-                  "options": [
-                    {
-                      "label": "1",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "2",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "3",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "4",
-                      "count": 1,
-                      "ratio": 1.0
-                    },
-                    {
-                      "label": "5",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "6",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "7",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "8",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "9",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "10",
-                      "count": 0,
-                      "ratio": 0.0
-                    }
-                  ],
-                  "meanScore": 4.0,
-                  "highScoreRate": 0.0,
-                  "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 }
               }
             },
@@ -2508,14 +2049,14 @@
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-1-group": {
-                  "baseCount": 29,
-                  "validCount": 27,
+                  "baseCount": 30,
+                  "validCount": 28,
                   "missingCount": 2,
                   "options": [
                     {
                       "label": "1",
                       "count": 3,
-                      "ratio": 0.1111
+                      "ratio": 0.1071
                     },
                     {
                       "label": "2",
@@ -2535,7 +2076,7 @@
                     {
                       "label": "5",
                       "count": 1,
-                      "ratio": 0.037
+                      "ratio": 0.0357
                     },
                     {
                       "label": "6",
@@ -2545,26 +2086,26 @@
                     {
                       "label": "7",
                       "count": 3,
-                      "ratio": 0.1111
+                      "ratio": 0.1071
                     },
                     {
                       "label": "8",
                       "count": 4,
-                      "ratio": 0.1481
+                      "ratio": 0.1429
                     },
                     {
                       "label": "9",
                       "count": 7,
-                      "ratio": 0.2593
+                      "ratio": 0.25
                     },
                     {
                       "label": "10",
-                      "count": 9,
-                      "ratio": 0.3333
+                      "count": 10,
+                      "ratio": 0.3571
                     }
                   ],
-                  "meanScore": 7.93,
-                  "highScoreRate": 0.7407,
+                  "meanScore": 8.0,
+                  "highScoreRate": 0.75,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-2-group": {
@@ -2686,66 +2227,6 @@
                   "meanScore": 8.31,
                   "highScoreRate": 0.6875,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                },
-                "aud-4-group": {
-                  "baseCount": 1,
-                  "validCount": 1,
-                  "missingCount": 0,
-                  "options": [
-                    {
-                      "label": "1",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "2",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "3",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "4",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "5",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "6",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "7",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "8",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "9",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "10",
-                      "count": 1,
-                      "ratio": 1.0
-                    }
-                  ],
-                  "meanScore": 10.0,
-                  "highScoreRate": 1.0,
-                  "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 }
               }
             }
@@ -2824,14 +2305,14 @@
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-1-group": {
-                  "baseCount": 29,
-                  "validCount": 29,
+                  "baseCount": 30,
+                  "validCount": 30,
                   "missingCount": 0,
                   "options": [
                     {
                       "label": "1",
                       "count": 1,
-                      "ratio": 0.0345
+                      "ratio": 0.0333
                     },
                     {
                       "label": "2",
@@ -2856,31 +2337,31 @@
                     {
                       "label": "6",
                       "count": 1,
-                      "ratio": 0.0345
+                      "ratio": 0.0333
                     },
                     {
                       "label": "7",
                       "count": 5,
-                      "ratio": 0.1724
+                      "ratio": 0.1667
                     },
                     {
                       "label": "8",
-                      "count": 10,
-                      "ratio": 0.3448
+                      "count": 11,
+                      "ratio": 0.3667
                     },
                     {
                       "label": "9",
                       "count": 5,
-                      "ratio": 0.1724
+                      "ratio": 0.1667
                     },
                     {
                       "label": "10",
                       "count": 7,
-                      "ratio": 0.2414
+                      "ratio": 0.2333
                     }
                   ],
                   "meanScore": 8.17,
-                  "highScoreRate": 0.7586,
+                  "highScoreRate": 0.7667,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-2-group": {
@@ -3002,66 +2483,6 @@
                   "meanScore": 8.5,
                   "highScoreRate": 0.8889,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                },
-                "aud-4-group": {
-                  "baseCount": 1,
-                  "validCount": 1,
-                  "missingCount": 0,
-                  "options": [
-                    {
-                      "label": "1",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "2",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "3",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "4",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "5",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "6",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "7",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "8",
-                      "count": 1,
-                      "ratio": 1.0
-                    },
-                    {
-                      "label": "9",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "10",
-                      "count": 0,
-                      "ratio": 0.0
-                    }
-                  ],
-                  "meanScore": 8.0,
-                  "highScoreRate": 1.0,
-                  "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 }
               }
             },
@@ -3130,14 +2551,14 @@
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-1-group": {
-                  "baseCount": 29,
-                  "validCount": 29,
+                  "baseCount": 30,
+                  "validCount": 30,
                   "missingCount": 0,
                   "options": [
                     {
                       "label": "1",
                       "count": 7,
-                      "ratio": 0.2414
+                      "ratio": 0.2333
                     },
                     {
                       "label": "2",
@@ -3162,31 +2583,31 @@
                     {
                       "label": "6",
                       "count": 1,
-                      "ratio": 0.0345
+                      "ratio": 0.0333
                     },
                     {
                       "label": "7",
                       "count": 2,
-                      "ratio": 0.069
+                      "ratio": 0.0667
                     },
                     {
                       "label": "8",
-                      "count": 8,
-                      "ratio": 0.2759
+                      "count": 9,
+                      "ratio": 0.3
                     },
                     {
                       "label": "9",
                       "count": 2,
-                      "ratio": 0.069
+                      "ratio": 0.0667
                     },
                     {
                       "label": "10",
                       "count": 9,
-                      "ratio": 0.3103
+                      "ratio": 0.3
                     }
                   ],
-                  "meanScore": 6.86,
-                  "highScoreRate": 0.6552,
+                  "meanScore": 6.9,
+                  "highScoreRate": 0.6667,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-2-group": {
@@ -3308,66 +2729,6 @@
                   "meanScore": 8.5,
                   "highScoreRate": 0.8333,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                },
-                "aud-4-group": {
-                  "baseCount": 1,
-                  "validCount": 1,
-                  "missingCount": 0,
-                  "options": [
-                    {
-                      "label": "1",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "2",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "3",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "4",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "5",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "6",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "7",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "8",
-                      "count": 1,
-                      "ratio": 1.0
-                    },
-                    {
-                      "label": "9",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "10",
-                      "count": 0,
-                      "ratio": 0.0
-                    }
-                  ],
-                  "meanScore": 8.0,
-                  "highScoreRate": 1.0,
-                  "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 }
               }
             },
@@ -3436,19 +2797,19 @@
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-1-group": {
-                  "baseCount": 29,
-                  "validCount": 29,
+                  "baseCount": 30,
+                  "validCount": 30,
                   "missingCount": 0,
                   "options": [
                     {
                       "label": "1",
                       "count": 2,
-                      "ratio": 0.069
+                      "ratio": 0.0667
                     },
                     {
                       "label": "2",
                       "count": 1,
-                      "ratio": 0.0345
+                      "ratio": 0.0333
                     },
                     {
                       "label": "3",
@@ -3468,31 +2829,31 @@
                     {
                       "label": "6",
                       "count": 1,
-                      "ratio": 0.0345
+                      "ratio": 0.0333
                     },
                     {
                       "label": "7",
                       "count": 3,
-                      "ratio": 0.1034
+                      "ratio": 0.1
                     },
                     {
                       "label": "8",
-                      "count": 7,
-                      "ratio": 0.2414
+                      "count": 8,
+                      "ratio": 0.2667
                     },
                     {
                       "label": "9",
                       "count": 7,
-                      "ratio": 0.2414
+                      "ratio": 0.2333
                     },
                     {
                       "label": "10",
                       "count": 8,
-                      "ratio": 0.2759
+                      "ratio": 0.2667
                     }
                   ],
                   "meanScore": 7.93,
-                  "highScoreRate": 0.7586,
+                  "highScoreRate": 0.7667,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-2-group": {
@@ -3614,66 +2975,6 @@
                   "meanScore": 8.56,
                   "highScoreRate": 0.7222,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                },
-                "aud-4-group": {
-                  "baseCount": 1,
-                  "validCount": 1,
-                  "missingCount": 0,
-                  "options": [
-                    {
-                      "label": "1",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "2",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "3",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "4",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "5",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "6",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "7",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "8",
-                      "count": 1,
-                      "ratio": 1.0
-                    },
-                    {
-                      "label": "9",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "10",
-                      "count": 0,
-                      "ratio": 0.0
-                    }
-                  ],
-                  "meanScore": 8.0,
-                  "highScoreRate": 1.0,
-                  "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 }
               }
             },
@@ -3742,14 +3043,14 @@
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-1-group": {
-                  "baseCount": 29,
-                  "validCount": 29,
+                  "baseCount": 30,
+                  "validCount": 30,
                   "missingCount": 0,
                   "options": [
                     {
                       "label": "1",
                       "count": 2,
-                      "ratio": 0.069
+                      "ratio": 0.0667
                     },
                     {
                       "label": "2",
@@ -3759,7 +3060,7 @@
                     {
                       "label": "3",
                       "count": 1,
-                      "ratio": 0.0345
+                      "ratio": 0.0333
                     },
                     {
                       "label": "4",
@@ -3774,31 +3075,31 @@
                     {
                       "label": "6",
                       "count": 1,
-                      "ratio": 0.0345
+                      "ratio": 0.0333
                     },
                     {
                       "label": "7",
                       "count": 2,
-                      "ratio": 0.069
+                      "ratio": 0.0667
                     },
                     {
                       "label": "8",
-                      "count": 14,
-                      "ratio": 0.4828
+                      "count": 15,
+                      "ratio": 0.5
                     },
                     {
                       "label": "9",
                       "count": 4,
-                      "ratio": 0.1379
+                      "ratio": 0.1333
                     },
                     {
                       "label": "10",
                       "count": 5,
-                      "ratio": 0.1724
+                      "ratio": 0.1667
                     }
                   ],
-                  "meanScore": 7.69,
-                  "highScoreRate": 0.7931,
+                  "meanScore": 7.7,
+                  "highScoreRate": 0.8,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-2-group": {
@@ -3920,66 +3221,6 @@
                   "meanScore": 8.17,
                   "highScoreRate": 0.8333,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                },
-                "aud-4-group": {
-                  "baseCount": 1,
-                  "validCount": 1,
-                  "missingCount": 0,
-                  "options": [
-                    {
-                      "label": "1",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "2",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "3",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "4",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "5",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "6",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "7",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "8",
-                      "count": 1,
-                      "ratio": 1.0
-                    },
-                    {
-                      "label": "9",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "10",
-                      "count": 0,
-                      "ratio": 0.0
-                    }
-                  ],
-                  "meanScore": 8.0,
-                  "highScoreRate": 1.0,
-                  "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 }
               }
             },
@@ -4048,19 +3289,19 @@
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-1-group": {
-                  "baseCount": 29,
-                  "validCount": 29,
+                  "baseCount": 30,
+                  "validCount": 30,
                   "missingCount": 0,
                   "options": [
                     {
                       "label": "1",
                       "count": 1,
-                      "ratio": 0.0345
+                      "ratio": 0.0333
                     },
                     {
                       "label": "2",
                       "count": 1,
-                      "ratio": 0.0345
+                      "ratio": 0.0333
                     },
                     {
                       "label": "3",
@@ -4070,41 +3311,41 @@
                     {
                       "label": "4",
                       "count": 2,
-                      "ratio": 0.069
+                      "ratio": 0.0667
                     },
                     {
                       "label": "5",
                       "count": 1,
-                      "ratio": 0.0345
+                      "ratio": 0.0333
                     },
                     {
                       "label": "6",
                       "count": 1,
-                      "ratio": 0.0345
+                      "ratio": 0.0333
                     },
                     {
                       "label": "7",
                       "count": 2,
-                      "ratio": 0.069
+                      "ratio": 0.0667
                     },
                     {
                       "label": "8",
-                      "count": 9,
-                      "ratio": 0.3103
+                      "count": 10,
+                      "ratio": 0.3333
                     },
                     {
                       "label": "9",
                       "count": 6,
-                      "ratio": 0.2069
+                      "ratio": 0.2
                     },
                     {
                       "label": "10",
                       "count": 6,
-                      "ratio": 0.2069
+                      "ratio": 0.2
                     }
                   ],
-                  "meanScore": 7.66,
-                  "highScoreRate": 0.7241,
+                  "meanScore": 7.67,
+                  "highScoreRate": 0.7333,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-2-group": {
@@ -4226,66 +3467,6 @@
                   "meanScore": 8.39,
                   "highScoreRate": 0.7778,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                },
-                "aud-4-group": {
-                  "baseCount": 1,
-                  "validCount": 1,
-                  "missingCount": 0,
-                  "options": [
-                    {
-                      "label": "1",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "2",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "3",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "4",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "5",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "6",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "7",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "8",
-                      "count": 1,
-                      "ratio": 1.0
-                    },
-                    {
-                      "label": "9",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "10",
-                      "count": 0,
-                      "ratio": 0.0
-                    }
-                  ],
-                  "meanScore": 8.0,
-                  "highScoreRate": 1.0,
-                  "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 }
               }
             }
@@ -4364,14 +3545,14 @@
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-1-group": {
-                  "baseCount": 29,
-                  "validCount": 29,
+                  "baseCount": 30,
+                  "validCount": 30,
                   "missingCount": 0,
                   "options": [
                     {
                       "label": "1",
                       "count": 2,
-                      "ratio": 0.069
+                      "ratio": 0.0667
                     },
                     {
                       "label": "2",
@@ -4401,26 +3582,26 @@
                     {
                       "label": "7",
                       "count": 3,
-                      "ratio": 0.1034
+                      "ratio": 0.1
                     },
                     {
                       "label": "8",
-                      "count": 6,
-                      "ratio": 0.2069
+                      "count": 7,
+                      "ratio": 0.2333
                     },
                     {
                       "label": "9",
                       "count": 4,
-                      "ratio": 0.1379
+                      "ratio": 0.1333
                     },
                     {
                       "label": "10",
                       "count": 14,
-                      "ratio": 0.4828
+                      "ratio": 0.4667
                     }
                   ],
-                  "meanScore": 8.52,
-                  "highScoreRate": 0.8276,
+                  "meanScore": 8.5,
+                  "highScoreRate": 0.8333,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-2-group": {
@@ -4542,66 +3723,6 @@
                   "meanScore": 9.0,
                   "highScoreRate": 0.8889,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                },
-                "aud-4-group": {
-                  "baseCount": 1,
-                  "validCount": 1,
-                  "missingCount": 0,
-                  "options": [
-                    {
-                      "label": "1",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "2",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "3",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "4",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "5",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "6",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "7",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "8",
-                      "count": 1,
-                      "ratio": 1.0
-                    },
-                    {
-                      "label": "9",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "10",
-                      "count": 0,
-                      "ratio": 0.0
-                    }
-                  ],
-                  "meanScore": 8.0,
-                  "highScoreRate": 1.0,
-                  "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 }
               }
             },
@@ -4670,19 +3791,19 @@
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-1-group": {
-                  "baseCount": 29,
-                  "validCount": 29,
+                  "baseCount": 30,
+                  "validCount": 30,
                   "missingCount": 0,
                   "options": [
                     {
                       "label": "1",
                       "count": 1,
-                      "ratio": 0.0345
+                      "ratio": 0.0333
                     },
                     {
                       "label": "2",
                       "count": 1,
-                      "ratio": 0.0345
+                      "ratio": 0.0333
                     },
                     {
                       "label": "3",
@@ -4707,26 +3828,26 @@
                     {
                       "label": "7",
                       "count": 3,
-                      "ratio": 0.1034
+                      "ratio": 0.1
                     },
                     {
                       "label": "8",
-                      "count": 4,
-                      "ratio": 0.1379
+                      "count": 5,
+                      "ratio": 0.1667
                     },
                     {
                       "label": "9",
                       "count": 3,
-                      "ratio": 0.1034
+                      "ratio": 0.1
                     },
                     {
                       "label": "10",
                       "count": 17,
-                      "ratio": 0.5862
+                      "ratio": 0.5667
                     }
                   ],
-                  "meanScore": 8.72,
-                  "highScoreRate": 0.8276,
+                  "meanScore": 8.7,
+                  "highScoreRate": 0.8333,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-2-group": {
@@ -4848,66 +3969,6 @@
                   "meanScore": 9.22,
                   "highScoreRate": 0.8889,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                },
-                "aud-4-group": {
-                  "baseCount": 1,
-                  "validCount": 1,
-                  "missingCount": 0,
-                  "options": [
-                    {
-                      "label": "1",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "2",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "3",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "4",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "5",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "6",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "7",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "8",
-                      "count": 1,
-                      "ratio": 1.0
-                    },
-                    {
-                      "label": "9",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "10",
-                      "count": 0,
-                      "ratio": 0.0
-                    }
-                  ],
-                  "meanScore": 8.0,
-                  "highScoreRate": 1.0,
-                  "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 }
               }
             },
@@ -4976,14 +4037,14 @@
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-1-group": {
-                  "baseCount": 29,
-                  "validCount": 29,
+                  "baseCount": 30,
+                  "validCount": 30,
                   "missingCount": 0,
                   "options": [
                     {
                       "label": "1",
                       "count": 2,
-                      "ratio": 0.069
+                      "ratio": 0.0667
                     },
                     {
                       "label": "2",
@@ -5013,26 +4074,26 @@
                     {
                       "label": "7",
                       "count": 1,
-                      "ratio": 0.0345
+                      "ratio": 0.0333
                     },
                     {
                       "label": "8",
-                      "count": 3,
-                      "ratio": 0.1034
+                      "count": 4,
+                      "ratio": 0.1333
                     },
                     {
                       "label": "9",
                       "count": 3,
-                      "ratio": 0.1034
+                      "ratio": 0.1
                     },
                     {
                       "label": "10",
                       "count": 20,
-                      "ratio": 0.6897
+                      "ratio": 0.6667
                     }
                   ],
-                  "meanScore": 8.97,
-                  "highScoreRate": 0.8966,
+                  "meanScore": 8.93,
+                  "highScoreRate": 0.9,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-2-group": {
@@ -5154,66 +4215,6 @@
                   "meanScore": 9.39,
                   "highScoreRate": 1.0,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                },
-                "aud-4-group": {
-                  "baseCount": 1,
-                  "validCount": 1,
-                  "missingCount": 0,
-                  "options": [
-                    {
-                      "label": "1",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "2",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "3",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "4",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "5",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "6",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "7",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "8",
-                      "count": 1,
-                      "ratio": 1.0
-                    },
-                    {
-                      "label": "9",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "10",
-                      "count": 0,
-                      "ratio": 0.0
-                    }
-                  ],
-                  "meanScore": 8.0,
-                  "highScoreRate": 1.0,
-                  "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 }
               }
             },
@@ -5282,14 +4283,14 @@
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-1-group": {
-                  "baseCount": 29,
-                  "validCount": 29,
+                  "baseCount": 30,
+                  "validCount": 30,
                   "missingCount": 0,
                   "options": [
                     {
                       "label": "1",
                       "count": 1,
-                      "ratio": 0.0345
+                      "ratio": 0.0333
                     },
                     {
                       "label": "2",
@@ -5299,7 +4300,7 @@
                     {
                       "label": "3",
                       "count": 1,
-                      "ratio": 0.0345
+                      "ratio": 0.0333
                     },
                     {
                       "label": "4",
@@ -5308,8 +4309,8 @@
                     },
                     {
                       "label": "5",
-                      "count": 0,
-                      "ratio": 0.0
+                      "count": 1,
+                      "ratio": 0.0333
                     },
                     {
                       "label": "6",
@@ -5319,26 +4320,26 @@
                     {
                       "label": "7",
                       "count": 1,
-                      "ratio": 0.0345
+                      "ratio": 0.0333
                     },
                     {
                       "label": "8",
                       "count": 4,
-                      "ratio": 0.1379
+                      "ratio": 0.1333
                     },
                     {
                       "label": "9",
                       "count": 2,
-                      "ratio": 0.069
+                      "ratio": 0.0667
                     },
                     {
                       "label": "10",
                       "count": 20,
-                      "ratio": 0.6897
+                      "ratio": 0.6667
                     }
                   ],
-                  "meanScore": 9.0,
-                  "highScoreRate": 0.8966,
+                  "meanScore": 8.87,
+                  "highScoreRate": 0.8667,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-2-group": {
@@ -5460,66 +4461,6 @@
                   "meanScore": 9.44,
                   "highScoreRate": 0.9444,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                },
-                "aud-4-group": {
-                  "baseCount": 1,
-                  "validCount": 1,
-                  "missingCount": 0,
-                  "options": [
-                    {
-                      "label": "1",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "2",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "3",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "4",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "5",
-                      "count": 1,
-                      "ratio": 1.0
-                    },
-                    {
-                      "label": "6",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "7",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "8",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "9",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "10",
-                      "count": 0,
-                      "ratio": 0.0
-                    }
-                  ],
-                  "meanScore": 5.0,
-                  "highScoreRate": 0.0,
-                  "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 }
               }
             },
@@ -5588,14 +4529,14 @@
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-1-group": {
-                  "baseCount": 29,
-                  "validCount": 29,
+                  "baseCount": 30,
+                  "validCount": 30,
                   "missingCount": 0,
                   "options": [
                     {
                       "label": "1",
                       "count": 3,
-                      "ratio": 0.1034
+                      "ratio": 0.1
                     },
                     {
                       "label": "2",
@@ -5625,26 +4566,26 @@
                     {
                       "label": "7",
                       "count": 3,
-                      "ratio": 0.1034
+                      "ratio": 0.1
                     },
                     {
                       "label": "8",
-                      "count": 4,
-                      "ratio": 0.1379
+                      "count": 5,
+                      "ratio": 0.1667
                     },
                     {
                       "label": "9",
                       "count": 2,
-                      "ratio": 0.069
+                      "ratio": 0.0667
                     },
                     {
                       "label": "10",
                       "count": 17,
-                      "ratio": 0.5862
+                      "ratio": 0.5667
                     }
                   ],
-                  "meanScore": 8.41,
-                  "highScoreRate": 0.7931,
+                  "meanScore": 8.4,
+                  "highScoreRate": 0.8,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 },
                 "aud-2-group": {
@@ -5766,66 +4707,6 @@
                   "meanScore": 9.5,
                   "highScoreRate": 0.9444,
                   "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                },
-                "aud-4-group": {
-                  "baseCount": 1,
-                  "validCount": 1,
-                  "missingCount": 0,
-                  "options": [
-                    {
-                      "label": "1",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "2",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "3",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "4",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "5",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "6",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "7",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "8",
-                      "count": 1,
-                      "ratio": 1.0
-                    },
-                    {
-                      "label": "9",
-                      "count": 0,
-                      "ratio": 0.0
-                    },
-                    {
-                      "label": "10",
-                      "count": 0,
-                      "ratio": 0.0
-                    }
-                  ],
-                  "meanScore": 8.0,
-                  "highScoreRate": 1.0,
-                  "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                 }
               }
             }
@@ -5852,9 +4733,9 @@
                   "title": "布撤展便利性",
                   "statsByAudience": {
                     "overall": {
-                      "baseCount": 29,
+                      "baseCount": 30,
                       "validCount": 29,
-                      "missingCount": 0,
+                      "missingCount": 1,
                       "options": [
                         {
                           "label": "1",
@@ -5912,9 +4793,9 @@
                       "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                     },
                     "aud-1-group": {
-                      "baseCount": 29,
+                      "baseCount": 30,
                       "validCount": 29,
-                      "missingCount": 0,
+                      "missingCount": 1,
                       "options": [
                         {
                           "label": "1",
@@ -6032,66 +4913,6 @@
                       "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                     },
                     "aud-3-group": {
-                      "baseCount": 0,
-                      "validCount": 0,
-                      "missingCount": 0,
-                      "options": [
-                        {
-                          "label": "1",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "2",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "3",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "4",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "5",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "6",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "7",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "8",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "9",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "10",
-                          "count": 0,
-                          "ratio": 0.0
-                        }
-                      ],
-                      "meanScore": null,
-                      "highScoreRate": null,
-                      "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                    },
-                    "aud-4-group": {
                       "baseCount": 0,
                       "validCount": 0,
                       "missingCount": 0,
@@ -6158,9 +4979,9 @@
                   "title": "货运/卸货/进出场便利性",
                   "statsByAudience": {
                     "overall": {
-                      "baseCount": 29,
+                      "baseCount": 30,
                       "validCount": 29,
-                      "missingCount": 0,
+                      "missingCount": 1,
                       "options": [
                         {
                           "label": "1",
@@ -6218,9 +5039,9 @@
                       "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                     },
                     "aud-1-group": {
-                      "baseCount": 29,
+                      "baseCount": 30,
                       "validCount": 29,
-                      "missingCount": 0,
+                      "missingCount": 1,
                       "options": [
                         {
                           "label": "1",
@@ -6338,66 +5159,6 @@
                       "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                     },
                     "aud-3-group": {
-                      "baseCount": 0,
-                      "validCount": 0,
-                      "missingCount": 0,
-                      "options": [
-                        {
-                          "label": "1",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "2",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "3",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "4",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "5",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "6",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "7",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "8",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "9",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "10",
-                          "count": 0,
-                          "ratio": 0.0
-                        }
-                      ],
-                      "meanScore": null,
-                      "highScoreRate": null,
-                      "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                    },
-                    "aud-4-group": {
                       "baseCount": 0,
                       "validCount": 0,
                       "missingCount": 0,
@@ -6464,9 +5225,9 @@
                   "title": "餐饮、休息等配套便利性",
                   "statsByAudience": {
                     "overall": {
-                      "baseCount": 29,
+                      "baseCount": 30,
                       "validCount": 29,
-                      "missingCount": 0,
+                      "missingCount": 1,
                       "options": [
                         {
                           "label": "1",
@@ -6524,9 +5285,9 @@
                       "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                     },
                     "aud-1-group": {
-                      "baseCount": 29,
+                      "baseCount": 30,
                       "validCount": 29,
-                      "missingCount": 0,
+                      "missingCount": 1,
                       "options": [
                         {
                           "label": "1",
@@ -6644,66 +5405,6 @@
                       "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                     },
                     "aud-3-group": {
-                      "baseCount": 0,
-                      "validCount": 0,
-                      "missingCount": 0,
-                      "options": [
-                        {
-                          "label": "1",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "2",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "3",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "4",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "5",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "6",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "7",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "8",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "9",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "10",
-                          "count": 0,
-                          "ratio": 0.0
-                        }
-                      ],
-                      "meanScore": null,
-                      "highScoreRate": null,
-                      "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                    },
-                    "aud-4-group": {
                       "baseCount": 0,
                       "validCount": 0,
                       "missingCount": 0,
@@ -6770,9 +5471,9 @@
                   "title": "与场馆方沟通协调顺畅度",
                   "statsByAudience": {
                     "overall": {
-                      "baseCount": 29,
+                      "baseCount": 30,
                       "validCount": 29,
-                      "missingCount": 0,
+                      "missingCount": 1,
                       "options": [
                         {
                           "label": "1",
@@ -6830,9 +5531,9 @@
                       "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                     },
                     "aud-1-group": {
-                      "baseCount": 29,
+                      "baseCount": 30,
                       "validCount": 29,
-                      "missingCount": 0,
+                      "missingCount": 1,
                       "options": [
                         {
                           "label": "1",
@@ -6950,66 +5651,6 @@
                       "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                     },
                     "aud-3-group": {
-                      "baseCount": 0,
-                      "validCount": 0,
-                      "missingCount": 0,
-                      "options": [
-                        {
-                          "label": "1",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "2",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "3",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "4",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "5",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "6",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "7",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "8",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "9",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "10",
-                          "count": 0,
-                          "ratio": 0.0
-                        }
-                      ],
-                      "meanScore": null,
-                      "highScoreRate": null,
-                      "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                    },
-                    "aud-4-group": {
                       "baseCount": 0,
                       "validCount": 0,
                       "missingCount": 0,
@@ -7088,19 +5729,19 @@
                   "title": "展区参观便利性",
                   "statsByAudience": {
                     "overall": {
-                      "baseCount": 45,
-                      "validCount": 45,
+                      "baseCount": 44,
+                      "validCount": 44,
                       "missingCount": 0,
                       "options": [
                         {
                           "label": "1",
                           "count": 1,
-                          "ratio": 0.0222
+                          "ratio": 0.0227
                         },
                         {
                           "label": "2",
                           "count": 1,
-                          "ratio": 0.0222
+                          "ratio": 0.0227
                         },
                         {
                           "label": "3",
@@ -7125,26 +5766,26 @@
                         {
                           "label": "7",
                           "count": 6,
-                          "ratio": 0.1333
+                          "ratio": 0.1364
                         },
                         {
                           "label": "8",
-                          "count": 17,
-                          "ratio": 0.3778
+                          "count": 16,
+                          "ratio": 0.3636
                         },
                         {
                           "label": "9",
                           "count": 10,
-                          "ratio": 0.2222
+                          "ratio": 0.2273
                         },
                         {
                           "label": "10",
                           "count": 10,
-                          "ratio": 0.2222
+                          "ratio": 0.2273
                         }
                       ],
-                      "meanScore": 8.24,
-                      "highScoreRate": 0.8222,
+                      "meanScore": 8.25,
+                      "highScoreRate": 0.8182,
                       "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                     },
                     "aud-1-group": {
@@ -7326,66 +5967,6 @@
                       "meanScore": 8.06,
                       "highScoreRate": 0.7778,
                       "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                    },
-                    "aud-4-group": {
-                      "baseCount": 1,
-                      "validCount": 1,
-                      "missingCount": 0,
-                      "options": [
-                        {
-                          "label": "1",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "2",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "3",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "4",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "5",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "6",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "7",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "8",
-                          "count": 1,
-                          "ratio": 1.0
-                        },
-                        {
-                          "label": "9",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "10",
-                          "count": 0,
-                          "ratio": 0.0
-                        }
-                      ],
-                      "meanScore": 8.0,
-                      "highScoreRate": 1.0,
-                      "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                     }
                   }
                 },
@@ -7394,19 +5975,19 @@
                   "title": "找馆找展便利性",
                   "statsByAudience": {
                     "overall": {
-                      "baseCount": 45,
-                      "validCount": 45,
+                      "baseCount": 44,
+                      "validCount": 44,
                       "missingCount": 0,
                       "options": [
                         {
                           "label": "1",
                           "count": 2,
-                          "ratio": 0.0444
+                          "ratio": 0.0455
                         },
                         {
                           "label": "2",
-                          "count": 1,
-                          "ratio": 0.0222
+                          "count": 0,
+                          "ratio": 0.0
                         },
                         {
                           "label": "3",
@@ -7426,31 +6007,31 @@
                         {
                           "label": "6",
                           "count": 1,
-                          "ratio": 0.0222
+                          "ratio": 0.0227
                         },
                         {
                           "label": "7",
                           "count": 4,
-                          "ratio": 0.0889
+                          "ratio": 0.0909
                         },
                         {
                           "label": "8",
                           "count": 21,
-                          "ratio": 0.4667
+                          "ratio": 0.4773
                         },
                         {
                           "label": "9",
                           "count": 9,
-                          "ratio": 0.2
+                          "ratio": 0.2045
                         },
                         {
                           "label": "10",
                           "count": 7,
-                          "ratio": 0.1556
+                          "ratio": 0.1591
                         }
                       ],
-                      "meanScore": 7.93,
-                      "highScoreRate": 0.8222,
+                      "meanScore": 8.07,
+                      "highScoreRate": 0.8409,
                       "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                     },
                     "aud-1-group": {
@@ -7632,66 +6213,6 @@
                       "meanScore": 7.78,
                       "highScoreRate": 0.8333,
                       "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                    },
-                    "aud-4-group": {
-                      "baseCount": 1,
-                      "validCount": 1,
-                      "missingCount": 0,
-                      "options": [
-                        {
-                          "label": "1",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "2",
-                          "count": 1,
-                          "ratio": 1.0
-                        },
-                        {
-                          "label": "3",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "4",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "5",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "6",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "7",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "8",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "9",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "10",
-                          "count": 0,
-                          "ratio": 0.0
-                        }
-                      ],
-                      "meanScore": 2.0,
-                      "highScoreRate": 0.0,
-                      "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                     }
                   }
                 },
@@ -7700,14 +6221,14 @@
                   "title": "现场接待/咨询服务",
                   "statsByAudience": {
                     "overall": {
-                      "baseCount": 45,
-                      "validCount": 45,
+                      "baseCount": 44,
+                      "validCount": 44,
                       "missingCount": 0,
                       "options": [
                         {
                           "label": "1",
                           "count": 1,
-                          "ratio": 0.0222
+                          "ratio": 0.0227
                         },
                         {
                           "label": "2",
@@ -7732,31 +6253,31 @@
                         {
                           "label": "6",
                           "count": 1,
-                          "ratio": 0.0222
+                          "ratio": 0.0227
                         },
                         {
                           "label": "7",
                           "count": 1,
-                          "ratio": 0.0222
+                          "ratio": 0.0227
                         },
                         {
                           "label": "8",
-                          "count": 7,
-                          "ratio": 0.1556
+                          "count": 6,
+                          "ratio": 0.1364
                         },
                         {
                           "label": "9",
                           "count": 8,
-                          "ratio": 0.1778
+                          "ratio": 0.1818
                         },
                         {
                           "label": "10",
                           "count": 27,
-                          "ratio": 0.6
+                          "ratio": 0.6136
                         }
                       ],
-                      "meanScore": 9.16,
-                      "highScoreRate": 0.9333,
+                      "meanScore": 9.18,
+                      "highScoreRate": 0.9318,
                       "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                     },
                     "aud-1-group": {
@@ -7938,66 +6459,6 @@
                       "meanScore": 9.17,
                       "highScoreRate": 0.8889,
                       "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                    },
-                    "aud-4-group": {
-                      "baseCount": 1,
-                      "validCount": 1,
-                      "missingCount": 0,
-                      "options": [
-                        {
-                          "label": "1",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "2",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "3",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "4",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "5",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "6",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "7",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "8",
-                          "count": 1,
-                          "ratio": 1.0
-                        },
-                        {
-                          "label": "9",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "10",
-                          "count": 0,
-                          "ratio": 0.0
-                        }
-                      ],
-                      "meanScore": 8.0,
-                      "highScoreRate": 1.0,
-                      "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                     }
                   }
                 },
@@ -8006,14 +6467,14 @@
                   "title": "餐饮、休息等配套便利性",
                   "statsByAudience": {
                     "overall": {
-                      "baseCount": 45,
-                      "validCount": 45,
+                      "baseCount": 44,
+                      "validCount": 44,
                       "missingCount": 0,
                       "options": [
                         {
                           "label": "1",
                           "count": 1,
-                          "ratio": 0.0222
+                          "ratio": 0.0227
                         },
                         {
                           "label": "2",
@@ -8028,7 +6489,7 @@
                         {
                           "label": "4",
                           "count": 1,
-                          "ratio": 0.0222
+                          "ratio": 0.0227
                         },
                         {
                           "label": "5",
@@ -8038,31 +6499,31 @@
                         {
                           "label": "6",
                           "count": 1,
-                          "ratio": 0.0222
+                          "ratio": 0.0227
                         },
                         {
                           "label": "7",
                           "count": 14,
-                          "ratio": 0.3111
+                          "ratio": 0.3182
                         },
                         {
                           "label": "8",
-                          "count": 19,
-                          "ratio": 0.4222
+                          "count": 18,
+                          "ratio": 0.4091
                         },
                         {
                           "label": "9",
                           "count": 1,
-                          "ratio": 0.0222
+                          "ratio": 0.0227
                         },
                         {
                           "label": "10",
                           "count": 8,
-                          "ratio": 0.1778
+                          "ratio": 0.1818
                         }
                       ],
-                      "meanScore": 7.78,
-                      "highScoreRate": 0.6222,
+                      "meanScore": 7.77,
+                      "highScoreRate": 0.6136,
                       "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                     },
                     "aud-1-group": {
@@ -8243,66 +6704,6 @@
                       ],
                       "meanScore": 7.78,
                       "highScoreRate": 0.5556,
-                      "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                    },
-                    "aud-4-group": {
-                      "baseCount": 1,
-                      "validCount": 1,
-                      "missingCount": 0,
-                      "options": [
-                        {
-                          "label": "1",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "2",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "3",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "4",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "5",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "6",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "7",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "8",
-                          "count": 1,
-                          "ratio": 1.0
-                        },
-                        {
-                          "label": "9",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "10",
-                          "count": 0,
-                          "ratio": 0.0
-                        }
-                      ],
-                      "meanScore": 8.0,
-                      "highScoreRate": 1.0,
                       "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                     }
                   }
@@ -8502,66 +6903,6 @@
                       "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                     },
                     "aud-3-group": {
-                      "baseCount": 0,
-                      "validCount": 0,
-                      "missingCount": 0,
-                      "options": [
-                        {
-                          "label": "1",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "2",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "3",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "4",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "5",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "6",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "7",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "8",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "9",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "10",
-                          "count": 0,
-                          "ratio": 0.0
-                        }
-                      ],
-                      "meanScore": null,
-                      "highScoreRate": null,
-                      "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                    },
-                    "aud-4-group": {
                       "baseCount": 0,
                       "validCount": 0,
                       "missingCount": 0,
@@ -8866,66 +7207,6 @@
                       "meanScore": null,
                       "highScoreRate": null,
                       "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                    },
-                    "aud-4-group": {
-                      "baseCount": 0,
-                      "validCount": 0,
-                      "missingCount": 0,
-                      "options": [
-                        {
-                          "label": "1",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "2",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "3",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "4",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "5",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "6",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "7",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "8",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "9",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "10",
-                          "count": 0,
-                          "ratio": 0.0
-                        }
-                      ],
-                      "meanScore": null,
-                      "highScoreRate": null,
-                      "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                     }
                   }
                 },
@@ -9114,66 +7395,6 @@
                       "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                     },
                     "aud-3-group": {
-                      "baseCount": 0,
-                      "validCount": 0,
-                      "missingCount": 0,
-                      "options": [
-                        {
-                          "label": "1",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "2",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "3",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "4",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "5",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "6",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "7",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "8",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "9",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "10",
-                          "count": 0,
-                          "ratio": 0.0
-                        }
-                      ],
-                      "meanScore": null,
-                      "highScoreRate": null,
-                      "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                    },
-                    "aud-4-group": {
                       "baseCount": 0,
                       "validCount": 0,
                       "missingCount": 0,
@@ -9478,66 +7699,6 @@
                       "meanScore": null,
                       "highScoreRate": null,
                       "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
-                    },
-                    "aud-4-group": {
-                      "baseCount": 0,
-                      "validCount": 0,
-                      "missingCount": 0,
-                      "options": [
-                        {
-                          "label": "1",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "2",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "3",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "4",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "5",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "6",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "7",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "8",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "9",
-                          "count": 0,
-                          "ratio": 0.0
-                        },
-                        {
-                          "label": "10",
-                          "count": 0,
-                          "ratio": 0.0
-                        }
-                      ],
-                      "meanScore": null,
-                      "highScoreRate": null,
-                      "note": "比例按有效作答样本计算；非 1-10 的值已作为缺失处理。"
                     }
                   }
                 }
@@ -9590,29 +7751,29 @@
               "note": "比例按有效作答样本计算。"
             },
             "aud-1-group": {
-              "baseCount": 29,
-              "validCount": 29,
+              "baseCount": 30,
+              "validCount": 30,
               "missingCount": 0,
               "options": [
                 {
                   "label": "明显感受到",
                   "count": 6,
-                  "ratio": 0.2069
+                  "ratio": 0.2
                 },
                 {
                   "label": "有一定感受",
                   "count": 4,
-                  "ratio": 0.1379
+                  "ratio": 0.1333
                 },
                 {
                   "label": "不太明显",
-                  "count": 10,
-                  "ratio": 0.3448
+                  "count": 11,
+                  "ratio": 0.3667
                 },
                 {
                   "label": "基本没感受到",
                   "count": 9,
-                  "ratio": 0.3103
+                  "ratio": 0.3
                 }
               ],
               "note": "比例按有效作答样本计算。"
@@ -9672,34 +7833,6 @@
                 }
               ],
               "note": "比例按有效作答样本计算。"
-            },
-            "aud-4-group": {
-              "baseCount": 1,
-              "validCount": 1,
-              "missingCount": 0,
-              "options": [
-                {
-                  "label": "明显感受到",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "有一定感受",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "不太明显",
-                  "count": 1,
-                  "ratio": 1.0
-                },
-                {
-                  "label": "基本没感受到",
-                  "count": 0,
-                  "ratio": 0.0
-                }
-              ],
-              "note": "比例按有效作答样本计算。"
             }
           }
         },
@@ -9740,29 +7873,29 @@
               "note": "比例按有效作答样本计算。"
             },
             "aud-1-group": {
-              "baseCount": 29,
-              "validCount": 29,
+              "baseCount": 30,
+              "validCount": 30,
               "missingCount": 0,
               "options": [
                 {
                   "label": "影响很大",
                   "count": 3,
-                  "ratio": 0.1034
+                  "ratio": 0.1
                 },
                 {
                   "label": "有一定影响",
                   "count": 4,
-                  "ratio": 0.1379
+                  "ratio": 0.1333
                 },
                 {
                   "label": "影响较小",
-                  "count": 10,
-                  "ratio": 0.3448
+                  "count": 11,
+                  "ratio": 0.3667
                 },
                 {
                   "label": "基本没有影响",
                   "count": 12,
-                  "ratio": 0.4138
+                  "ratio": 0.4
                 }
               ],
               "note": "比例按有效作答样本计算。"
@@ -9819,34 +7952,6 @@
                   "label": "基本没有影响",
                   "count": 7,
                   "ratio": 0.3889
-                }
-              ],
-              "note": "比例按有效作答样本计算。"
-            },
-            "aud-4-group": {
-              "baseCount": 1,
-              "validCount": 1,
-              "missingCount": 0,
-              "options": [
-                {
-                  "label": "影响很大",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "有一定影响",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "影响较小",
-                  "count": 1,
-                  "ratio": 1.0
-                },
-                {
-                  "label": "基本没有影响",
-                  "count": 0,
-                  "ratio": 0.0
                 }
               ],
               "note": "比例按有效作答样本计算。"
@@ -9925,64 +8030,64 @@
               "note": "比例按当前筛选样本量计算。"
             },
             "aud-1-group": {
-              "baseCount": 29,
-              "validCount": 29,
+              "baseCount": 30,
+              "validCount": 30,
               "missingCount": 0,
               "options": [
                 {
                   "label": "导视不清、找路不便",
-                  "count": 3,
-                  "ratio": 0.1034
+                  "count": 4,
+                  "ratio": 0.1333
                 },
                 {
                   "label": "停车或上下客不便",
                   "count": 4,
-                  "ratio": 0.1379
+                  "ratio": 0.1333
                 },
                 {
                   "label": "现场围挡/施工痕迹影响观感",
                   "count": 1,
-                  "ratio": 0.0345
+                  "ratio": 0.0333
                 },
                 {
                   "label": "噪音、粉尘或异味影响体验",
                   "count": 1,
-                  "ratio": 0.0345
+                  "ratio": 0.0333
                 },
                 {
                   "label": "配套设施不足（休息区、餐饮、卫生间等）",
                   "count": 6,
-                  "ratio": 0.2069
+                  "ratio": 0.2
                 },
                 {
                   "label": "场馆服务响应不够及时",
                   "count": 1,
-                  "ratio": 0.0345
+                  "ratio": 0.0333
                 },
                 {
                   "label": "布撤展/物流组织不够顺畅",
                   "count": 2,
-                  "ratio": 0.069
+                  "ratio": 0.0667
                 },
                 {
                   "label": "安全提示或秩序管理不足",
                   "count": 1,
-                  "ratio": 0.0345
+                  "ratio": 0.0333
                 },
                 {
                   "label": "数字化服务/信息发布不够清晰",
                   "count": 5,
-                  "ratio": 0.1724
+                  "ratio": 0.1667
                 },
                 {
                   "label": "其他",
                   "count": 3,
-                  "ratio": 0.1034
+                  "ratio": 0.1
                 },
                 {
                   "label": "本次没有明显问题",
                   "count": 12,
-                  "ratio": 0.4138
+                  "ratio": 0.4
                 }
               ],
               "note": "比例按当前筛选样本量计算。"
@@ -10112,69 +8217,6 @@
                 }
               ],
               "note": "比例按当前筛选样本量计算。"
-            },
-            "aud-4-group": {
-              "baseCount": 1,
-              "validCount": 1,
-              "missingCount": 0,
-              "options": [
-                {
-                  "label": "导视不清、找路不便",
-                  "count": 1,
-                  "ratio": 1.0
-                },
-                {
-                  "label": "停车或上下客不便",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "现场围挡/施工痕迹影响观感",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "噪音、粉尘或异味影响体验",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "配套设施不足（休息区、餐饮、卫生间等）",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "场馆服务响应不够及时",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "布撤展/物流组织不够顺畅",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "安全提示或秩序管理不足",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "数字化服务/信息发布不够清晰",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "其他",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "本次没有明显问题",
-                  "count": 0,
-                  "ratio": 0.0
-                }
-              ],
-              "note": "比例按当前筛选样本量计算。"
             }
           }
         }
@@ -10238,19 +8280,19 @@
               "note": "比例按当前筛选样本量计算。"
             },
             "aud-1-group": {
-              "baseCount": 29,
-              "validCount": 29,
+              "baseCount": 30,
+              "validCount": 30,
               "missingCount": 0,
               "options": [
                 {
                   "label": "导视与动线",
-                  "count": 6,
-                  "ratio": 0.2069
+                  "count": 7,
+                  "ratio": 0.2333
                 },
                 {
                   "label": "环境与基础配套",
                   "count": 9,
-                  "ratio": 0.3103
+                  "ratio": 0.3
                 },
                 {
                   "label": "布撤展/物流组织",
@@ -10260,22 +8302,22 @@
                 {
                   "label": "现场服务响应",
                   "count": 2,
-                  "ratio": 0.069
+                  "ratio": 0.0667
                 },
                 {
                   "label": "安全秩序管理",
                   "count": 1,
-                  "ratio": 0.0345
+                  "ratio": 0.0333
                 },
                 {
                   "label": "餐饮服务",
                   "count": 9,
-                  "ratio": 0.3103
+                  "ratio": 0.3
                 },
                 {
                   "label": "其他",
                   "count": 10,
-                  "ratio": 0.3448
+                  "ratio": 0.3333
                 }
               ],
               "note": "比例按当前筛选样本量计算。"
@@ -10365,49 +8407,6 @@
                 }
               ],
               "note": "比例按当前筛选样本量计算。"
-            },
-            "aud-4-group": {
-              "baseCount": 1,
-              "validCount": 1,
-              "missingCount": 0,
-              "options": [
-                {
-                  "label": "导视与动线",
-                  "count": 1,
-                  "ratio": 1.0
-                },
-                {
-                  "label": "环境与基础配套",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "布撤展/物流组织",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "现场服务响应",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "安全秩序管理",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "餐饮服务",
-                  "count": 0,
-                  "ratio": 0.0
-                },
-                {
-                  "label": "其他",
-                  "count": 0,
-                  "ratio": 0.0
-                }
-              ],
-              "note": "比例按当前筛选样本量计算。"
             }
           }
         },
@@ -10438,13 +8437,13 @@
               "note": "开放题仅展示填写率，未对文本内容做自动归纳。"
             },
             "aud-1-group": {
-              "baseCount": 29,
-              "validCount": 29,
+              "baseCount": 30,
+              "validCount": 30,
               "missingCount": 0,
               "options": [
                 {
                   "label": "有填写",
-                  "count": 29,
+                  "count": 30,
                   "ratio": 1.0
                 },
                 {
@@ -10481,24 +8480,6 @@
                 {
                   "label": "有填写",
                   "count": 18,
-                  "ratio": 1.0
-                },
-                {
-                  "label": "未填写",
-                  "count": 0,
-                  "ratio": 0.0
-                }
-              ],
-              "note": "开放题仅展示填写率，未对文本内容做自动归纳。"
-            },
-            "aud-4-group": {
-              "baseCount": 1,
-              "validCount": 1,
-              "missingCount": 0,
-              "options": [
-                {
-                  "label": "有填写",
-                  "count": 1,
                   "ratio": 1.0
                 },
                 {

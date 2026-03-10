@@ -24,6 +24,8 @@ type HighlightVisual = {
   icon: ReactNode;
 };
 
+type PeriodMenuKey = "year" | "month";
+
 const defaultHighlightVisual: HighlightVisual = {
   toneClassName: "is-generic",
   icon: (
@@ -207,11 +209,14 @@ export function ReportDashboard({ data, archive }: ReportDashboardProps) {
     data.meta.filters[0]?.key ?? "overall",
   );
   const [isQuickNavOpen, setIsQuickNavOpen] = useState(false);
+  const [openPeriodMenu, setOpenPeriodMenu] = useState<PeriodMenuKey | null>(null);
   const [isPeriodPending, startPeriodTransition] = useTransition();
   const quickNavRef = useRef<HTMLDivElement>(null);
+  const periodControlsRef = useRef<HTMLDivElement>(null);
   const activeYear = archive?.years.find((yearItem) => yearItem.year === archive.current.year);
 
   const navigateToPeriod = (year: number, month: number) => {
+    setOpenPeriodMenu(null);
     const href = `${pathname}?year=${year}&month=${String(month).padStart(2, "0")}`;
     startPeriodTransition(() => {
       router.push(href, { scroll: false });
@@ -221,10 +226,11 @@ export function ReportDashboard({ data, archive }: ReportDashboardProps) {
   useEffect(() => {
     setActiveFilterKey(data.meta.filters[0]?.key ?? "overall");
     setIsQuickNavOpen(false);
+    setOpenPeriodMenu(null);
   }, [data]);
 
   useEffect(() => {
-    if (!isQuickNavOpen) {
+    if (!isQuickNavOpen && !openPeriodMenu) {
       return;
     }
 
@@ -232,11 +238,15 @@ export function ReportDashboard({ data, archive }: ReportDashboardProps) {
       if (!quickNavRef.current?.contains(event.target as Node)) {
         setIsQuickNavOpen(false);
       }
+      if (!periodControlsRef.current?.contains(event.target as Node)) {
+        setOpenPeriodMenu(null);
+      }
     };
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setIsQuickNavOpen(false);
+        setOpenPeriodMenu(null);
       }
     };
 
@@ -247,7 +257,7 @@ export function ReportDashboard({ data, archive }: ReportDashboardProps) {
       document.removeEventListener("pointerdown", handlePointerDown);
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isQuickNavOpen]);
+  }, [isQuickNavOpen, openPeriodMenu]);
 
   return (
     <main className="report-shell">
@@ -272,87 +282,128 @@ export function ReportDashboard({ data, archive }: ReportDashboardProps) {
             <span>客群页签 {data.meta.filters.length}</span>
             {archive ? <span>归档期数 {archive.totalReports}</span> : null}
             {archive ? (
-              <div className="hero-meta-controls" aria-label="报告年月切换">
-                <div className="report-select-shell is-compact">
-                  <span className="report-select-label is-compact" aria-hidden="true">
-                    {archive.current.year}年
-                  </span>
-                  <select
+              <div
+                className="hero-meta-controls"
+                aria-label="报告年月切换"
+                ref={periodControlsRef}
+              >
+                <div className="report-menu">
+                  <button
+                    type="button"
+                    className={
+                      openPeriodMenu === "year"
+                        ? "report-menu-trigger is-open"
+                        : "report-menu-trigger"
+                    }
                     aria-label="选择年份"
-                    className="report-select is-overlay"
-                    value={String(archive.current.year)}
+                    aria-haspopup="listbox"
+                    aria-expanded={openPeriodMenu === "year"}
                     disabled={isPeriodPending}
-                    onChange={(event) => {
-                      const nextYear = Number(event.target.value);
-                      const nextYearEntry = archive.years.find(
-                        (yearItem) => yearItem.year === nextYear,
-                      );
-                      if (!nextYearEntry) {
-                        return;
-                      }
-                      const matchingMonth = nextYearEntry.months.find(
-                        (monthItem) => monthItem.month === archive.current.month,
-                      );
-                      const fallbackMonth =
-                        matchingMonth ??
-                        nextYearEntry.months[nextYearEntry.months.length - 1];
-                      navigateToPeriod(nextYear, fallbackMonth.month);
-                    }}
+                    onClick={() =>
+                      setOpenPeriodMenu((current) =>
+                        current === "year" ? null : "year",
+                      )
+                    }
                   >
-                    {archive.years.map((yearItem) => (
-                      <option key={yearItem.year} value={yearItem.year}>
-                        {yearItem.year}年
-                      </option>
-                    ))}
-                  </select>
-                  <span className="report-select-icon" aria-hidden="true">
-                    <svg viewBox="0 0 20 20" fill="none">
-                      <path
-                        d="M5 7.5L10 12.5L15 7.5"
-                        stroke="currentColor"
-                        strokeWidth="1.8"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
+                    <span className="report-menu-label">{archive.current.year}年</span>
+                    <span className="report-menu-icon" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" fill="none">
+                        <path
+                          d="M5 7.5L10 12.5L15 7.5"
+                          stroke="currentColor"
+                          strokeWidth="1.8"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  {openPeriodMenu === "year" ? (
+                    <div className="report-menu-panel" role="listbox" aria-label="年份列表">
+                      {archive.years.map((yearItem) => (
+                        <button
+                          key={yearItem.year}
+                          type="button"
+                          className={
+                            yearItem.year === archive.current.year
+                              ? "report-menu-option is-selected"
+                              : "report-menu-option"
+                          }
+                          onClick={() => {
+                            const matchingMonth = yearItem.months.find(
+                              (monthItem) => monthItem.month === archive.current.month,
+                            );
+                            const fallbackMonth =
+                              matchingMonth ??
+                              yearItem.months[yearItem.months.length - 1];
+                            navigateToPeriod(yearItem.year, fallbackMonth.month);
+                          }}
+                        >
+                          <span>{yearItem.year}年</span>
+                          {yearItem.year === archive.current.year ? (
+                            <strong>当前</strong>
+                          ) : null}
+                        </button>
+                      ))}
+                    </div>
+                  ) : null}
                 </div>
-                <div className="report-select-shell is-compact">
-                  <span className="report-select-label is-compact" aria-hidden="true">
-                    {String(archive.current.month).padStart(2, "0")}月
-                  </span>
-                  <select
+                <div className="report-menu">
+                  <button
+                    type="button"
+                    className={
+                      openPeriodMenu === "month"
+                        ? "report-menu-trigger is-open"
+                        : "report-menu-trigger"
+                    }
                     aria-label="选择月份"
-                    className="report-select is-overlay"
-                    value={String(archive.current.month).padStart(2, "0")}
+                    aria-haspopup="listbox"
+                    aria-expanded={openPeriodMenu === "month"}
                     disabled={isPeriodPending || !activeYear}
-                    onChange={(event) => {
-                      navigateToPeriod(
-                        archive.current.year,
-                        Number(event.target.value),
-                      );
-                    }}
+                    onClick={() =>
+                      setOpenPeriodMenu((current) =>
+                        current === "month" ? null : "month",
+                      )
+                    }
                   >
-                    {activeYear?.months.map((monthItem) => (
-                      <option
-                        key={monthItem.id}
-                        value={String(monthItem.month).padStart(2, "0")}
-                      >
-                        {String(monthItem.month).padStart(2, "0")}月
-                      </option>
-                    ))}
-                  </select>
-                  <span className="report-select-icon" aria-hidden="true">
-                    <svg viewBox="0 0 20 20" fill="none">
-                      <path
-                        d="M5 7.5L10 12.5L15 7.5"
-                        stroke="currentColor"
-                        strokeWidth="1.8"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
+                    <span className="report-menu-label">
+                      {String(archive.current.month).padStart(2, "0")}月
+                    </span>
+                    <span className="report-menu-icon" aria-hidden="true">
+                      <svg viewBox="0 0 20 20" fill="none">
+                        <path
+                          d="M5 7.5L10 12.5L15 7.5"
+                          stroke="currentColor"
+                          strokeWidth="1.8"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  {openPeriodMenu === "month" ? (
+                    <div className="report-menu-panel" role="listbox" aria-label="月份列表">
+                      {activeYear?.months.map((monthItem) => (
+                        <button
+                          key={monthItem.id}
+                          type="button"
+                          className={
+                            monthItem.month === archive.current.month
+                              ? "report-menu-option is-selected"
+                              : "report-menu-option"
+                          }
+                          onClick={() => {
+                            navigateToPeriod(archive.current.year, monthItem.month);
+                          }}
+                        >
+                          <span>{String(monthItem.month).padStart(2, "0")}月</span>
+                          {monthItem.month === archive.current.month ? (
+                            <strong>当前</strong>
+                          ) : null}
+                        </button>
+                      ))}
+                    </div>
+                  ) : null}
                 </div>
               </div>
             ) : null}
