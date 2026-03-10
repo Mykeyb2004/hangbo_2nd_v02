@@ -884,11 +884,24 @@ select {
     padding: 18px;
   }
 
+  .hero-title {
+    display: block;
+  }
+
   .hero-title-line {
-    width: fit-content;
-    gap: 10px;
-    white-space: nowrap;
+    display: block;
+    width: 100%;
     font-size: clamp(1.05rem, 4.8vw, 1.7rem);
+    line-height: 1.06;
+    letter-spacing: -0.05em;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-title-tag {
+    margin-left: 8px;
+    margin-top: 6px;
+    transform: translateY(-0.08em);
   }
 
   .highlight-grid,
