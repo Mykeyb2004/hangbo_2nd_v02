@@ -92,6 +92,7 @@ export type ReportData = {
     title: string;
     subtitle: string;
     generatedAt: string;
+    period?: ReportPeriod;
     responseCount: number;
     audienceQuestion: string;
     filters: FilterTab[];
@@ -100,4 +101,27 @@ export type ReportData = {
   };
   highlights: Highlight[];
   sections: Section[];
+};
+
+export type ReportPeriod = {
+  id: string;
+  year: number;
+  month: number;
+  label: string;
+};
+
+export type ReportPeriodLink = ReportPeriod & {
+  href: string;
+};
+
+export type ReportArchiveYear = {
+  year: number;
+  href: string;
+  months: ReportPeriodLink[];
+};
+
+export type ReportArchiveNavigation = {
+  current: ReportPeriod;
+  years: ReportArchiveYear[];
+  totalReports: number;
 };

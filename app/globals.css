@@ -195,6 +195,143 @@ select {
   font-size: 1.06rem;
 }
 
+.report-period-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(0, auto) minmax(0, 1fr);
+  align-items: end;
+  gap: 16px 20px;
+  max-width: 920px;
+  padding: 16px 18px;
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(248, 250, 252, 0.68)),
+    linear-gradient(135deg, rgba(30, 64, 175, 0.04), rgba(14, 165, 233, 0.05));
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.06);
+}
+
+.report-period-copy {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.report-period-copy p {
+  max-width: none;
+  font-size: 0.95rem;
+  color: var(--muted-soft);
+}
+
+.report-period-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.report-select-field {
+  display: grid;
+  gap: 8px;
+  min-width: 138px;
+}
+
+.report-select-field > span {
+  color: var(--muted-soft);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.report-select-shell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  padding-right: 38px;
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.82));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    0 10px 20px rgba(15, 23, 42, 0.04);
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.report-select-shell:hover {
+  border-color: rgba(30, 64, 175, 0.24);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.82),
+    0 12px 24px rgba(30, 64, 175, 0.07);
+}
+
+.report-select-shell:has(.report-select:focus-visible) {
+  border-color: rgba(30, 64, 175, 0.32);
+  box-shadow:
+    0 0 0 3px rgba(191, 219, 254, 0.65),
+    0 12px 24px rgba(30, 64, 175, 0.08);
+}
+
+.report-select {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 14px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+  appearance: none;
+  cursor: pointer;
+}
+
+.report-select:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.report-select:focus {
+  outline: none;
+}
+
+.report-select-icon {
+  position: absolute;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  color: color-mix(in srgb, var(--primary) 72%, white);
+  pointer-events: none;
+}
+
+.report-select-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.report-period-summary {
+  display: grid;
+  justify-items: end;
+  gap: 4px;
+  min-width: 0;
+  color: var(--muted);
+  text-align: right;
+}
+
+.report-period-summary strong {
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.report-period-summary span {
+  color: var(--muted-soft);
+  font-size: 0.92rem;
+}
+
 .hero-meta,
 .pill-row,
 .audience-strip {
@@ -1001,6 +1138,16 @@ select {
     transform: translateY(-0.08em);
   }
 
+  .report-period-toolbar {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .report-period-summary {
+    justify-items: start;
+    text-align: left;
+  }
+
   .highlight-grid,
   .quick-nav-panel nav,
   .metric-layout {
@@ -1046,6 +1193,10 @@ select {
   .branch-head,
   .matrix-radar-head {
     flex-direction: column;
+  }
+
+  .report-select-field {
+    min-width: min(100%, 180px);
   }
 
   .radar-chart-card {
