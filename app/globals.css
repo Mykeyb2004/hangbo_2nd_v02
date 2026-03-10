@@ -356,6 +356,39 @@ select {
   margin-top: 28px;
 }
 
+.report-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 28px;
+  padding: 20px 24px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+  backdrop-filter: blur(14px);
+}
+
+.report-footer-logo {
+  width: 44px;
+  height: auto;
+  flex: 0 0 auto;
+}
+
+.report-footer-copy {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
 .report-nav {
   position: sticky;
   top: 24px;
@@ -868,6 +901,10 @@ select {
     position: static;
   }
 
+  .report-footer {
+    margin-top: 24px;
+  }
+
   .nav-card nav {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -880,7 +917,8 @@ select {
 
   .hero-card,
   .section-card,
-  .question-card {
+  .question-card,
+  .report-footer {
     padding: 18px;
   }
 
@@ -908,6 +946,15 @@ select {
   .nav-card nav,
   .metric-layout {
     grid-template-columns: 1fr;
+  }
+
+  .report-footer {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .report-footer-logo {
+    width: 38px;
   }
 
   .bar-chart-row {
