@@ -26,6 +26,8 @@ type HighlightVisual = {
 
 type PeriodMenuKey = "year" | "month";
 
+const HIDDEN_QUESTION_CODES = new Set(["Q24"]);
+
 const defaultHighlightVisual: HighlightVisual = {
   toneClassName: "is-generic",
   icon: (
@@ -203,6 +205,14 @@ function getHighlightVisual(label: string): HighlightVisual {
 
 export function ReportDashboard({ data, archive }: ReportDashboardProps) {
   const heroTitle = buildHeroTitleLayout(data.meta.title);
+  const visibleSections = data.sections
+    .map((section) => ({
+      ...section,
+      questions: section.questions.filter(
+        (question) => !("code" in question && HIDDEN_QUESTION_CODES.has(question.code)),
+      ),
+    }))
+    .filter((section) => section.questions.length > 0);
   const pathname = usePathname();
   const router = useRouter();
   const [activeFilterKey, setActiveFilterKey] = useState(
@@ -461,7 +471,7 @@ export function ReportDashboard({ data, archive }: ReportDashboardProps) {
 
       <div className="report-layout">
         <div className="section-stack">
-          {data.sections.map((section) => (
+          {visibleSections.map((section) => (
             <section className="section-card" id={section.id} key={section.id}>
               <div className="section-head">
                 <div className="section-title-row">
@@ -498,7 +508,7 @@ export function ReportDashboard({ data, archive }: ReportDashboardProps) {
         >
           <span className="nav-kicker">问卷结构</span>
           <nav aria-label="快速跳转">
-            {data.sections.map((section) => (
+            {visibleSections.map((section) => (
               <a
                 href={`#${section.id}`}
                 key={section.id}
