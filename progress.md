@@ -124,3 +124,14 @@
 | What's the goal? | 编写脚本分析问卷 Excel 并产出字段映射 |
 | What have I learned? | 表头结构清晰，多选题已拆列，评分题含特殊编码 `11`，末尾含大量平台元数据 |
 | What have I done? | 已实现并验证脚本，生成映射 CSV/JSON 和结构摘要 Markdown |
+
+### Phase 8: Codebase Data Flow Review
+- **Status:** complete
+- **Started:** 2026-03-11 01:08
+- Actions taken:
+  - 阅读 `app/page.tsx`、`components/report-dashboard.tsx`、`components/question-block.tsx`
+  - 阅读 `scripts/build_survey_report_data.py` 与 `scripts/generate_survey_field_mapping.py`
+  - 核对 `data/report-data.json` 和 `outputs/survey_field_mapping.csv`，确认前端读取链路与预处理规则
+- Files created/modified:
+  - `findings.md` (updated)
+  - `progress.md` (updated)

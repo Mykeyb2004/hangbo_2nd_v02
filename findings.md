@@ -70,3 +70,13 @@
 - 页面结构已按 `问卷.md` 的章节顺序展开，并提供左侧章节导航
 - 每题都带有客群页签，切换后表格、样本数和柱状图会同步变化
 - 总览区已提供样本量、关键指标卡和客群概览条，整体风格为浅色现代数据看板
+
+## Code Reading Findings
+- 前端页面入口 `app/page.tsx` 直接静态导入 `data/report-data.json`，没有在浏览器端解析 `data/data.xlsx`
+- `package.json` 中 `predev` / `prebuild` 都会先执行 `uv run python scripts/build_survey_report_data.py`，说明 Excel 到 JSON 的预处理是当前运行链路的一部分
+- `scripts/build_survey_report_data.py` 会先读取 `outputs/survey_field_mapping.csv`，再读取 `data/data.xlsx`，据此识别每个问题的列、题型和适用客群
+- `scripts/generate_survey_field_mapping.py` 使用标准库直接解析 `.xlsx` 压缩包内的 XML，而不是依赖 `pandas` / `openpyxl`
+- 评分题预处理口径是：只保留 `1-10`，其余值视为缺失；因此原始表中出现的 `11` 会被丢弃
+- 多选题预处理口径是：one-hot 列中 `1=选中`、空值=未选；“其他”文本列按“有填写人数”统计
+- 开放题 `Q24` 当前不会把原文传给前端，只输出填写率统计
+- 条件题 `Q15/Q16/Q17` 会按身份过滤样本后再统计，避免在“总体”里把不适用样本混入分母
