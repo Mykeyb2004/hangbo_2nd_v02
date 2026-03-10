@@ -1,7 +1,5 @@
 "use client";
 
-import { useState } from "react";
-
 import { BarChart } from "@/components/bar-chart";
 import { StatTable } from "@/components/stat-table";
 import {
@@ -23,6 +21,8 @@ import type {
 type QuestionBlockProps = {
   question: Question;
   filters: FilterTab[];
+  activeKey: string;
+  onFilterChange: (key: string) => void;
 };
 
 function EmptyState({ message }: { message: string }) {
@@ -152,10 +152,17 @@ function MatrixPanels({
   );
 }
 
-export function QuestionBlock({ question, filters }: QuestionBlockProps) {
-  const [activeKey, setActiveKey] = useState(filters[0]?.key ?? "overall");
+export function QuestionBlock({
+  question,
+  filters,
+  activeKey,
+  onFilterChange,
+}: QuestionBlockProps) {
+  const resolvedActiveKey = filters.some((filter) => filter.key === activeKey)
+    ? activeKey
+    : (filters[0]?.key ?? "overall");
   const activeIndex = Math.max(
-    filters.findIndex((filter) => filter.key === activeKey),
+    filters.findIndex((filter) => filter.key === resolvedActiveKey),
     0,
   );
   const accent = CHART_ACCENTS[activeIndex % CHART_ACCENTS.length];
@@ -184,13 +191,13 @@ export function QuestionBlock({ question, filters }: QuestionBlockProps) {
 
       <div className="tab-list" role="tablist" aria-label={`${question.title} 客群筛选`}>
         {filters.map((filter) => {
-          const active = filter.key === activeKey;
+          const active = filter.key === resolvedActiveKey;
           return (
             <button
               key={filter.key}
               type="button"
               className={active ? "tab-button is-active" : "tab-button"}
-              onClick={() => setActiveKey(filter.key)}
+              onClick={() => onFilterChange(filter.key)}
               role="tab"
               aria-selected={active}
             >
@@ -204,16 +211,19 @@ export function QuestionBlock({ question, filters }: QuestionBlockProps) {
       {isSimpleQuestion(question) ? (
         <MetricPanel
           title={question.title}
-          stat={question.statsByAudience[activeKey]}
+          stat={question.statsByAudience[resolvedActiveKey]}
           accent={accent}
-          note={question.description || question.statsByAudience[activeKey]?.note}
+          note={
+            question.description ||
+            question.statsByAudience[resolvedActiveKey]?.note
+          }
         />
       ) : null}
 
       {isMatrixQuestion(question) ? (
         <MatrixPanels
           items={question.items}
-          activeKey={activeKey}
+          activeKey={resolvedActiveKey}
           accent={accent}
         />
       ) : null}
@@ -224,7 +234,7 @@ export function QuestionBlock({ question, filters }: QuestionBlockProps) {
             <BranchPanels
               key={branch.id}
               branch={branch}
-              activeKey={activeKey}
+              activeKey={resolvedActiveKey}
               activeFilter={activeFilter}
               accent={accent}
             />

@@ -221,6 +221,28 @@ select {
   font-size: 0.92rem;
 }
 
+.audience-pill {
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.audience-pill:hover {
+  transform: translateY(-1px);
+  border-color: rgba(30, 64, 175, 0.24);
+}
+
+.audience-pill.is-active {
+  border-color: rgba(30, 64, 175, 0.28);
+  background: color-mix(in srgb, var(--primary) 12%, white);
+  color: var(--primary);
+  box-shadow: 0 10px 22px rgba(30, 64, 175, 0.1);
+}
+
 .highlight-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -256,6 +278,12 @@ select {
 
 .audience-pill strong {
   color: var(--primary);
+}
+
+.audience-pill:focus-visible,
+.tab-button:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--primary) 60%, white);
+  outline-offset: 2px;
 }
 
 .note-list {

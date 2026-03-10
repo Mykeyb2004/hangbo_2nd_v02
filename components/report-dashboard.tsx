@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 import { QuestionBlock } from "@/components/question-block";
 import { buildHeroTitleLayout, formatGeneratedAt } from "@/lib/report-helpers";
 import type { ReportData } from "@/lib/report-types";
@@ -8,6 +12,9 @@ type ReportDashboardProps = {
 
 export function ReportDashboard({ data }: ReportDashboardProps) {
   const heroTitle = buildHeroTitleLayout(data.meta.title);
+  const [activeFilterKey, setActiveFilterKey] = useState(
+    data.meta.filters[0]?.key ?? "overall",
+  );
 
   return (
     <main className="report-shell">
@@ -46,12 +53,22 @@ export function ReportDashboard({ data }: ReportDashboardProps) {
         </div>
 
         <div className="hero-footer">
-          <div className="audience-strip">
+          <div className="audience-strip" aria-label="全局客群筛选">
             {data.meta.filters.map((filter) => (
-              <span className="audience-pill" key={filter.key}>
+              <button
+                key={filter.key}
+                type="button"
+                className={
+                  filter.key === activeFilterKey
+                    ? "audience-pill is-active"
+                    : "audience-pill"
+                }
+                onClick={() => setActiveFilterKey(filter.key)}
+                aria-pressed={filter.key === activeFilterKey}
+              >
                 {filter.label}
                 <strong>{filter.count}</strong>
-              </span>
+              </button>
             ))}
           </div>
           {data.meta.notes.length > 0 ? (
@@ -99,6 +116,8 @@ export function ReportDashboard({ data }: ReportDashboardProps) {
                     key={question.id}
                     question={question}
                     filters={data.meta.filters}
+                    activeKey={activeFilterKey}
+                    onFilterChange={setActiveFilterKey}
                   />
                 ))}
               </div>
