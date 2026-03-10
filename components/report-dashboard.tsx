@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
 import { QuestionBlock } from "@/components/question-block";
 import { buildHeroTitleLayout } from "@/lib/report-helpers";
@@ -9,6 +9,113 @@ import type { ReportData } from "@/lib/report-types";
 type ReportDashboardProps = {
   data: ReportData;
 };
+
+type HighlightVisual = {
+  toneClassName: string;
+  icon: ReactNode;
+};
+
+const defaultHighlightVisual: HighlightVisual = {
+  toneClassName: "is-generic",
+  icon: (
+    <svg viewBox="0 0 160 160" fill="none" aria-hidden="true">
+      <circle cx="80" cy="80" r="44" stroke="currentColor" strokeWidth="12" />
+      <path
+        d="M80 38V80L108 100"
+        stroke="currentColor"
+        strokeWidth="12"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  ),
+};
+
+function getHighlightVisual(label: string): HighlightVisual {
+  switch (label) {
+    case "总体满意度均值":
+      return {
+        toneClassName: "is-score",
+        icon: (
+          <svg viewBox="0 0 160 160" fill="none" aria-hidden="true">
+            <circle cx="80" cy="80" r="46" stroke="currentColor" strokeWidth="12" />
+            <path
+              d="M80 46L89.6 66.2L112 69.3L95.7 84.9L99.8 107L80 96.2L60.2 107L64.3 84.9L48 69.3L70.4 66.2L80 46Z"
+              fill="currentColor"
+            />
+          </svg>
+        ),
+      };
+    case "再次参加意愿":
+      return {
+        toneClassName: "is-intent",
+        icon: (
+          <svg viewBox="0 0 160 160" fill="none" aria-hidden="true">
+            <path
+              d="M80 122C114 101.8 128 83.3 128 60.8C128 45.4 116.1 34 101.8 34C91.5 34 84.7 39.2 80 46.8C75.3 39.2 68.5 34 58.2 34C43.9 34 32 45.4 32 60.8C32 83.3 46 101.8 80 122Z"
+              fill="currentColor"
+            />
+            <path
+              d="M80 122C114 101.8 128 83.3 128 60.8C128 45.4 116.1 34 101.8 34C91.5 34 84.7 39.2 80 46.8C75.3 39.2 68.5 34 58.2 34C43.9 34 32 45.4 32 60.8C32 83.3 46 101.8 80 122Z"
+              stroke="currentColor"
+              strokeWidth="8"
+              strokeLinejoin="round"
+            />
+          </svg>
+        ),
+      };
+    case "最突出问题":
+      return {
+        toneClassName: "is-issue",
+        icon: (
+          <svg viewBox="0 0 160 160" fill="none" aria-hidden="true">
+            <path
+              d="M80 32C106.5 32 128 53.5 128 80C128 106.5 106.5 128 80 128C53.5 128 32 106.5 32 80C32 53.5 53.5 32 80 32Z"
+              stroke="currentColor"
+              strokeWidth="12"
+            />
+            <path
+              d="M80 56V84"
+              stroke="currentColor"
+              strokeWidth="12"
+              strokeLinecap="round"
+            />
+            <circle cx="80" cy="104" r="7" fill="currentColor" />
+          </svg>
+        ),
+      };
+    case "优先改善方向":
+      return {
+        toneClassName: "is-action",
+        icon: (
+          <svg viewBox="0 0 160 160" fill="none" aria-hidden="true">
+            <path
+              d="M44 116L116 44"
+              stroke="currentColor"
+              strokeWidth="12"
+              strokeLinecap="round"
+            />
+            <path
+              d="M68 44H116V92"
+              stroke="currentColor"
+              strokeWidth="12"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M42 86V118H74"
+              stroke="currentColor"
+              strokeWidth="12"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        ),
+      };
+    default:
+      return defaultHighlightVisual;
+  }
+}
 
 export function ReportDashboard({ data }: ReportDashboardProps) {
   const heroTitle = buildHeroTitleLayout(data.meta.title);
@@ -41,13 +148,23 @@ export function ReportDashboard({ data }: ReportDashboardProps) {
         </div>
 
         <div className="highlight-grid">
-          {data.highlights.map((highlight) => (
-            <article className="highlight-card" key={highlight.label}>
-              <span>{highlight.label}</span>
-              <strong>{highlight.value}</strong>
-              <small>{highlight.detail}</small>
-            </article>
-          ))}
+          {data.highlights.map((highlight) => {
+            const visual = getHighlightVisual(highlight.label);
+
+            return (
+              <article
+                className={`highlight-card ${visual.toneClassName}`}
+                key={highlight.label}
+              >
+                <div className="highlight-card-art">{visual.icon}</div>
+                <div className="highlight-card-content">
+                  <span>{highlight.label}</span>
+                  <strong>{highlight.value}</strong>
+                  <small>{highlight.detail}</small>
+                </div>
+              </article>
+            );
+          })}
         </div>
 
         <div className="hero-footer">
