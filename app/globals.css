@@ -578,6 +578,7 @@ select {
   display: grid;
   gap: 12px;
   justify-items: start;
+  pointer-events: none;
 }
 
 .quick-nav-panel {
@@ -621,6 +622,7 @@ select {
   box-shadow: 0 18px 40px rgba(30, 64, 175, 0.24);
   color: #eff6ff;
   cursor: pointer;
+  pointer-events: auto;
   transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
