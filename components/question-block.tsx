@@ -264,7 +264,6 @@ export function QuestionBlock({
         onChange={onFilterChange}
         ariaLabel={`${question.title} 客群筛选`}
         accent={accent}
-        density="compact"
       />
 
       {isSimpleQuestion(question) ? (
