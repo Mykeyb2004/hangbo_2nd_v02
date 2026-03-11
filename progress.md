@@ -2,6 +2,47 @@
 
 ## Session: 2026-03-11
 
+### Phase 0: Task Reset
+- **Status:** complete
+- **Started:** 2026-03-11 22:30 CST
+- Actions taken:
+  - 将本轮目标从“交互排查”切换为“统一客群筛选器组件并替换题块筛选器”
+  - 读取现有 `task_plan.md`、`findings.md`、`progress.md`，确认上一轮排查结论可直接复用
+  - 确认仓库中已有 `components/audience-filter-tabs.tsx` 与 `components/report-hero.tsx`
+  - 识别 `AudienceFilterTabs` 尚未接线到 `report-dashboard.tsx` 和 `question-block.tsx`
+- Files created/modified:
+  - `task_plan.md` (updated)
+  - `findings.md` (updated)
+  - `progress.md` (updated)
+
+### Phase 2: Shared Component Refactor
+- **Status:** complete
+- Actions taken:
+  - 调整 `components/audience-filter-tabs.tsx`，统一输出顶部筛选器风格的按钮结构
+  - 在 `components/report-dashboard.tsx` 中用共享筛选组件替换顶部手写 `audience-pill`
+  - 在 `components/question-block.tsx` 中用共享筛选组件替换题块内 `tab-button`
+  - 删除 `app/globals.css` 中已废弃的 `tab-list` / `tab-button` 样式，并把题块强调色收敛到 `--filter-accent`
+  - 同步修正 `components/report-hero.tsx` 的共享组件调用签名
+  - 顺手补齐 `lib/report-types.ts` 与 `lib/report-helpers.ts` 中缺失的高亮卡片类型/导出，恢复构建链路
+- Files created/modified:
+  - `components/audience-filter-tabs.tsx` (updated)
+  - `components/report-dashboard.tsx` (updated)
+  - `components/question-block.tsx` (updated)
+  - `components/report-hero.tsx` (updated)
+  - `app/globals.css` (updated)
+  - `lib/report-types.ts` (updated)
+  - `lib/report-helpers.ts` (updated)
+
+### Phase 3: Verification
+- **Status:** complete
+- Actions taken:
+  - 运行 `uv run npm run build`，确认 Next.js 生产构建通过
+  - 启动 `uv run npm run dev`，用浏览器快照确认所有题块筛选器都变为 `group > button[aria-pressed]`
+  - 点击题块中的“普通观众”筛选器，验证顶部和其他题块同步切换到相同 pressed 状态
+  - 记录浏览器控制台信息，确认唯一错误为缺失 `favicon.ico` 的 404，与本次改造无关
+- Files created/modified:
+  - `progress.md` (updated)
+
 ### Phase 1: Requirements & Discovery
 - **Status:** complete
 - **Started:** 2026-03-11 22:00 CST
@@ -52,6 +93,10 @@
 | Test | Input | Expected | Actual | Status |
 |------|-------|----------|--------|--------|
 | 代码搜索 | `rg` 搜索客群标签相关实现 | 找到切换入口文件 | 命中 `report-dashboard.tsx`、`question-block.tsx`、`globals.css` | ✓ |
+| 共享组件排查 | 搜索 `AudienceFilterTabs` | 确认是否已有可复用组件 | 命中 `audience-filter-tabs.tsx` 和 `report-hero.tsx`，但主页面未接入 | ✓ |
+| 生产构建 | `uv run npm run build` | 通过编译和类型检查 | 构建通过，生成 `/` 与 `/_not-found` 页面 | ✓ |
+| 结构统一验证 | 浏览器快照检查顶部与题块筛选器 | 所有筛选器走同一套按钮结构 | 顶部和题块都为 `group > button[aria-pressed]` | ✓ |
+| 点击链路验证 | 点击“您本次的身份是？”中的“普通观众” | 顶部与后续题块同步切换 | 顶部和所有题块均同步切到“普通观众” | ✓ |
 | 浏览器结构统计 | 移动端宽度打开首页 | 确认页面规模 | 56 个页签按钮、63 个按钮、74 个 `article`、9 个表格、12 个 SVG、约 1731 个 DOM 元素 | ✓ |
 | 全局客群切换 | 依次点击 3 个全局客群按钮 | 观察切换代价 | 每次约 547 到 582 次 DOM mutation，首帧约 33.2ms 到 53.7ms | ✓ |
 | 题内页签行为 | 点击第一题的“参展商”页签 | 只影响当前题或同步全局 | 顶部全局客群同步切到“参展商”，说明是整页筛选 | ✓ |
@@ -60,6 +105,8 @@
 | Timestamp | Error | Attempt | Resolution |
 |-----------|-------|---------|------------|
 | 2026-03-11 22:03 CST | `rg` 扫描不存在目录返回 exit code 2 | 1 | 使用已返回的命中项并收窄后续搜索路径 |
+| 2026-03-11 22:29 CST | `sed: pyproject.toml: No such file or directory` | 1 | 改查 `package.json`，确认前端构建脚本 |
+| 2026-03-11 22:33 CST | `highlight-card.tsx` 引用缺失导出 `getHighlightToneClassName` | 1 | 补充类型和 helper 后重新构建通过 |
 
 ## 5-Question Reboot Check
 | Question | Answer |

@@ -1,5 +1,6 @@
 "use client";
 
+import { AudienceFilterTabs } from "@/components/audience-filter-tabs";
 import { BarChart } from "@/components/bar-chart";
 import { RadarChart } from "@/components/radar-chart";
 import { ScoreRing } from "@/components/score-ring";
@@ -257,24 +258,14 @@ export function QuestionBlock({
         ) : null}
       </div>
 
-      <div className="tab-list" role="tablist" aria-label={`${question.title} 客群筛选`}>
-        {filters.map((filter) => {
-          const active = filter.key === resolvedActiveKey;
-          return (
-            <button
-              key={filter.key}
-              type="button"
-              className={active ? "tab-button is-active" : "tab-button"}
-              onClick={() => onFilterChange(filter.key)}
-              role="tab"
-              aria-selected={active}
-            >
-              <span>{filter.label}</span>
-              <small>{filter.count}</small>
-            </button>
-          );
-        })}
-      </div>
+      <AudienceFilterTabs
+        items={filters}
+        activeKey={resolvedActiveKey}
+        onChange={onFilterChange}
+        ariaLabel={`${question.title} 客群筛选`}
+        accent={accent}
+        density="compact"
+      />
 
       {isSimpleQuestion(question) ? (
         <MetricPanel

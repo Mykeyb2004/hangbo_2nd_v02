@@ -1,11 +1,13 @@
 import type {
   BranchQuestion,
   DistributionOption,
+  Highlight,
   MatrixQuestion,
   Question,
   SimpleQuestion,
   StatBlock,
 } from "@/lib/report-types";
+import { resolveHighlightKind } from "@/lib/report-config";
 
 export const CHART_ACCENTS = [
   "#1e40af",
@@ -69,4 +71,19 @@ export function buildHeroTitleLayout(title: string): HeroTitleLayout {
   const tag = tagMatch?.[1]?.trim();
   const sanitizedTitle = title.replace(/（[^）]+）/, "").trim();
   return { lines: [sanitizedTitle], tag };
+}
+
+export function getHighlightToneClassName(highlight: Highlight) {
+  switch (resolveHighlightKind(highlight)) {
+    case "score":
+      return "is-score";
+    case "intent":
+      return "is-intent";
+    case "issue":
+      return "is-issue";
+    case "action":
+      return "is-action";
+    default:
+      return "is-generic";
+  }
 }

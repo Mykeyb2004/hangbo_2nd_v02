@@ -10,6 +10,7 @@ import {
   type ReactNode,
 } from "react";
 
+import { AudienceFilterTabs } from "@/components/audience-filter-tabs";
 import { QuestionBlock } from "@/components/question-block";
 import { buildHeroTitleLayout } from "@/lib/report-helpers";
 import type { ReportArchiveNavigation, ReportData } from "@/lib/report-types";
@@ -441,24 +442,12 @@ export function ReportDashboard({ data, archive }: ReportDashboardProps) {
         </div>
 
         <div className="hero-footer">
-          <div className="audience-strip" aria-label="全局客群筛选">
-            {data.meta.filters.map((filter) => (
-              <button
-                key={filter.key}
-                type="button"
-                className={
-                  filter.key === activeFilterKey
-                    ? "audience-pill is-active"
-                    : "audience-pill"
-                }
-                onClick={() => setActiveFilterKey(filter.key)}
-                aria-pressed={filter.key === activeFilterKey}
-              >
-                {filter.label}
-                <strong>{filter.count}</strong>
-              </button>
-            ))}
-          </div>
+          <AudienceFilterTabs
+            items={data.meta.filters}
+            activeKey={activeFilterKey}
+            onChange={setActiveFilterKey}
+            ariaLabel="全局客群筛选"
+          />
           {data.meta.notes.length > 0 ? (
             <ul className="note-list">
               {data.meta.notes.map((note) => (

@@ -81,10 +81,13 @@ export type Section = {
   questions: Question[];
 };
 
+export type HighlightKind = "score" | "intent" | "issue" | "action" | "generic";
+
 export type Highlight = {
   label: string;
   value: string;
   detail: string;
+  kind?: HighlightKind;
 };
 
 export type ReportData = {
