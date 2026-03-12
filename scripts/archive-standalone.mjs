@@ -5,6 +5,7 @@ import path from "node:path";
 const rootDir = process.cwd();
 const distDir = path.join(rootDir, "dist");
 const archiveFile = path.join(rootDir, "dist.tar.gz");
+const envFile = path.join(rootDir, ".env");
 
 async function ensureExists(targetPath, label) {
   try {
@@ -15,8 +16,10 @@ async function ensureExists(targetPath, label) {
 }
 
 async function runTar() {
+  const tarArgs = ["-czf", archiveFile, "-C", distDir, ".", "-C", rootDir, ".env"];
+
   await new Promise((resolve, reject) => {
-    const child = spawn("tar", ["-czf", archiveFile, "-C", distDir, "."], {
+    const child = spawn("tar", tarArgs, {
       cwd: rootDir,
       stdio: "inherit",
     });
@@ -34,6 +37,7 @@ async function runTar() {
 
 async function main() {
   await ensureExists(distDir, "Deploy bundle");
+  await ensureExists(envFile, ".env file");
   await rm(archiveFile, { force: true });
   await runTar();
   console.log(`Archive created at ${archiveFile}`);

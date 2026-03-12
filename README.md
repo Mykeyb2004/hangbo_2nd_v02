@@ -103,6 +103,19 @@ uv run python scripts/build_survey_report_data.py --output data/reports/2026/03.
 npm run dev
 ```
 
+如需启用报告 PIN 解锁页，可在项目根目录创建 `.env`，写入：
+
+```bash
+REPORT_UNLOCK_PIN=123456
+```
+
+说明：
+
+- `REPORT_UNLOCK_PIN` 仅在服务端读取，不会下发到前端源码
+- 仓库提供了 `.env.example` 作为结构参考
+- 未配置该变量时，报告页维持原有直达访问行为
+- 配置后，访问 `/` 时会先看到数字解锁页；解锁状态通过短期 `HttpOnly` cookie 保留
+
 如只想单独刷新前端数据：
 
 ```bash
