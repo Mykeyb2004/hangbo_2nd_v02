@@ -3,7 +3,7 @@
 | 组件名 | 功能 | 代码文件名 | 备注 |
 |---|---|---|---|
 | `ReportDashboard` | 报告页主编排组件，负责全局客群状态、期数切换和 section 组装 | `components/report-dashboard.tsx` | 当前主链路入口，已收敛为状态编排层 |
-| `ReportUnlockScreen` | 报告访问解锁页，提供手机锁屏风格的 PIN 输入和解锁反馈 | `components/report-unlock-screen.tsx` | 未解锁时替代报告主体渲染，依赖服务端 cookie 校验，当前已收敛为仅保留数字解锁面板且不再展示页脚品牌信息的紧凑布局 |
+| `ReportUnlockScreen` | 报告访问解锁页，提供手机锁屏风格的 PIN 输入和解锁反馈 | `components/report-unlock-screen.tsx` | 未解锁时替代报告主体渲染，依赖服务端 cookie 校验；正确 PIN 后会触发整页重新加载，避免部署环境下因 `router.refresh()` 合并状态导致锁屏页停留在“正在校验访问 PIN...” |
 | `ReportHero` | 渲染报告头部，包括标题、摘要指标、期数切换和全局筛选 | `components/report-hero.tsx` | 组合 `HighlightsGrid`、`PeriodPicker`、`AudienceFilterTabs` |
 | `ReportScaffold` | 提供报告页主容器与背景装饰层 | `components/report-scaffold.tsx` | 结构型组件，包裹整页内容 |
 | `ReportFooter` | 渲染页脚品牌与版权信息 | `components/report-footer.tsx` | 结构稳定，适合独立复用 |

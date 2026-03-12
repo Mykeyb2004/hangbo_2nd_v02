@@ -1,4 +1,3 @@
-import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
 import {
@@ -42,8 +41,8 @@ export async function POST(request: Request) {
     return NextResponse.json({ message: "PIN 不正确，请重试。" }, { status: 401 });
   }
 
-  const cookieStore = await cookies();
-  cookieStore.set(
+  const response = NextResponse.json({ ok: true });
+  response.cookies.set(
     REPORT_UNLOCK_COOKIE_NAME,
     createReportUnlockCookieValue(),
     {
@@ -52,5 +51,5 @@ export async function POST(request: Request) {
     },
   );
 
-  return NextResponse.json({ ok: true });
+  return response;
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { useRouter } from "next/navigation";
 
 import { ReportScaffold } from "@/components/report-scaffold";
 
@@ -29,7 +28,6 @@ function formatLockTime(value: Date) {
 }
 
 export function ReportUnlockScreen({ periodLabel: _periodLabel }: ReportUnlockScreenProps) {
-  const router = useRouter();
   const [pin, setPin] = useState("");
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -70,7 +68,7 @@ export function ReportUnlockScreen({ periodLabel: _periodLabel }: ReportUnlockSc
         return;
       }
 
-      router.refresh();
+      window.location.assign(window.location.href);
     } catch {
       setError("网络异常，请稍后重试。");
       setPin("");
