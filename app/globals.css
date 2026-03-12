@@ -87,8 +87,10 @@ select {
 .section-card,
 .question-card,
 .metric-panel,
+.metric-card,
 .highlight-card,
-.branch-block {
+.branch-block,
+.branch-card {
   position: relative;
   z-index: 1;
   backdrop-filter: blur(22px);
@@ -664,7 +666,8 @@ select {
 
 .section-stack,
 .question-stack,
-.branch-stack {
+.branch-stack,
+.stack-lg {
   display: grid;
   gap: 20px;
 }
@@ -733,7 +736,9 @@ select {
 }
 
 .metric-panel,
-.branch-block {
+.metric-card,
+.branch-block,
+.branch-card {
   display: grid;
   gap: 14px;
   padding: 18px;
@@ -743,6 +748,7 @@ select {
 }
 
 .metric-panel-head,
+.panel-head,
 .branch-head {
   display: flex;
   justify-content: space-between;
@@ -751,6 +757,7 @@ select {
 }
 
 .metric-panel-head h4,
+.panel-head h4,
 .branch-head h4 {
   margin: 0;
   font-size: 1.05rem;
@@ -1165,6 +1172,7 @@ select {
   }
 
   .metric-panel-head,
+  .panel-head,
   .branch-head,
   .matrix-radar-head {
     flex-direction: column;

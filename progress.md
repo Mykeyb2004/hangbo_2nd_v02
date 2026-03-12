@@ -1,5 +1,54 @@
 # Progress Log
 
+## Session: 2026-03-12
+
+### Phase 1: Discovery & Scope
+- **Status:** complete
+- **Started:** 2026-03-12 10:30 CST
+- Actions taken:
+  - 读取现有规划文件，确认上一轮筛选器统一已完成，本轮目标切换为报告页结构收敛
+  - 盘点 `components/` 中已有但未接入主链路的组件与 hooks
+  - 对照 `report-dashboard.tsx`、`question-block.tsx` 与 `report-hero.tsx`、`quick-nav.tsx`、`question-renderers.tsx`，确认重复逻辑集中在页面骨架和题型渲染两层
+  - 记录 className 与样式绑定差异，确认需要以兼容旧样式为前提完成接线
+- Files created/modified:
+  - `task_plan.md` (updated)
+  - `findings.md` (updated)
+  - `progress.md` (updated)
+
+### Phase 2: Dashboard Structure Refactor
+- **Status:** complete
+- Actions taken:
+  - 识别 `report-dashboard.tsx` 中可直接下沉为共享组件的区域：hero、period picker、highlight cards、section card、quick nav、footer、report scaffold
+  - 用 `ReportScaffold`、`ReportHero`、`SectionCard`、`QuickNav`、`ReportFooter` 重写 `report-dashboard.tsx` 主链路
+  - 将 `report-dashboard.tsx` 中重复的高亮卡、自动缩字、period menu、快速导航、footer 标记彻底移出
+  - 为 `visibleSections` 增加 `useMemo`，避免客群切换时重复构造过滤后的 section 数据
+- Files created/modified:
+  - `components/report-dashboard.tsx` (updated)
+  - `progress.md` (updated)
+
+### Phase 3: Question Rendering Refactor
+- **Status:** complete
+- Actions taken:
+  - 用 `QuestionCardShell` 替换 `question-block.tsx` 中重复的题卡头部和筛选器容器
+  - 用 `SimpleQuestionPanel`、`MatrixQuestionPanel`、`BranchQuestionPanel` 替换原有题型分发实现
+  - 通过 `app/globals.css` 增加 `metric-card`、`branch-card`、`panel-head`、`stack-lg` 的样式别名，保证共享组件接入后仍复用现有视觉语义
+- Files created/modified:
+  - `components/question-block.tsx` (updated)
+  - `app/globals.css` (updated)
+  - `progress.md` (updated)
+
+### Phase 4: Verification
+- **Status:** complete
+- Actions taken:
+  - 运行 `uv run npm run build`，确认 Next.js 生产构建和类型检查通过
+  - 启动 `uv run npm run dev` 并用 Playwright 打开首页，确认 hero、题卡、快速导航和 footer 正常渲染
+  - 点击第一题中的“参展商”筛选按钮，确认顶部全局筛选与后续题卡筛选器同步更新
+  - 记录浏览器控制台唯一报错为 `favicon.ico` 缺失的 404，与本轮改造无关
+- Files created/modified:
+  - `task_plan.md` (updated)
+  - `findings.md` (updated)
+  - `progress.md` (updated)
+
 ## Session: 2026-03-11
 
 ### Phase 0: Task Reset
@@ -92,6 +141,9 @@
 ## Test Results
 | Test | Input | Expected | Actual | Status |
 |------|-------|----------|--------|--------|
+| 报告页构建验证 | `uv run npm run build` | 构建和类型检查通过 | 通过，首页路由正常产出 | ✓ |
+| 页面结构快照 | Playwright 打开 `http://localhost:3000/` | 共享组件接线后页面仍完整渲染 | hero、sections、题卡、快速导航、footer 均存在 | ✓ |
+| 全局筛选联动 | 点击第一题中的“参展商” | 顶部与后续题卡筛选器同步更新 | 顶部全局筛选与各题卡同步切换为“参展商” | ✓ |
 | 代码搜索 | `rg` 搜索客群标签相关实现 | 找到切换入口文件 | 命中 `report-dashboard.tsx`、`question-block.tsx`、`globals.css` | ✓ |
 | 共享组件排查 | 搜索 `AudienceFilterTabs` | 确认是否已有可复用组件 | 命中 `audience-filter-tabs.tsx` 和 `report-hero.tsx`，但主页面未接入 | ✓ |
 | 生产构建 | `uv run npm run build` | 通过编译和类型检查 | 构建通过，生成 `/` 与 `/_not-found` 页面 | ✓ |
@@ -104,6 +156,7 @@
 ## Error Log
 | Timestamp | Error | Attempt | Resolution |
 |-----------|-------|---------|------------|
+| 2026-03-12 00:30 CST | `GET /favicon.ico 404` | 1 | 记录为现有静态资源缺失，与本轮重构无关 |
 | 2026-03-11 22:03 CST | `rg` 扫描不存在目录返回 exit code 2 | 1 | 使用已返回的命中项并收窄后续搜索路径 |
 | 2026-03-11 22:29 CST | `sed: pyproject.toml: No such file or directory` | 1 | 改查 `package.json`，确认前端构建脚本 |
 | 2026-03-11 22:33 CST | `highlight-card.tsx` 引用缺失导出 `getHighlightToneClassName` | 1 | 补充类型和 helper 后重新构建通过 |
@@ -111,8 +164,8 @@
 ## 5-Question Reboot Check
 | Question | Answer |
 |----------|--------|
-| Where am I? | Phase 1，已完成入口定位，准备读交互链路 |
-| Where am I going? | 正在整理最终结论并准备回复用户 |
-| What's the goal? | 定位手机端切换客群标签偶发不及时的原因，不改代码 |
-| What have I learned? | 根因主要是共享筛选状态造成整页重渲染，样式过渡放大了体感延迟 |
-| What have I done? | 已完成代码排查、本地浏览器验证和证据记录 |
+| Where am I? | Phase 5，改造与验证均已完成，准备交付 |
+| Where am I going? | 总结已完成的结构收敛与验证结果 |
+| What's the goal? | 深度分析并收敛报告页组件结构，减少冗余并提升复用度 |
+| What have I learned? | 主冗余来自“已抽组件未接线”，收口主链路比继续新建抽象更有效 |
+| What have I done? | 已完成主链路接线、题型渲染复用、构建验证和页面级联动核验 |

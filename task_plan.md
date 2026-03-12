@@ -1,49 +1,54 @@
-# Task Plan: Audience Filter Component Unification
+# Task Plan: Report Component Consolidation
 
 ## Goal
-将顶部第 1 组客群筛选器抽成共用组件，并替换题块中后续所有客群筛选器，统一点击行为和状态语义。
+深度梳理报告页组件结构，提取并接入可复用的公共组件，减少 `report-dashboard` 与 `question-block` 中的重复实现，同时保持现有页面行为稳定。
 
 ## Current Phase
-Phase 4
+Phase 5
 
 ## Phases
 
 ### Phase 1: Discovery & Scope
-- [x] Review current filter implementations
-- [x] Confirm reuse scope across dashboard and question blocks
+- [x] Review current report/page component structure
+- [x] Confirm which extracted components are duplicated or unused
 - [x] Record findings and assumptions
 - **Status:** complete
 
-### Phase 2: Shared Component Refactor
-- [x] Align shared audience filter component API with current usage
-- [x] Replace hero filter rendering with shared component
-- [x] Replace question-level filters with shared component
-- [x] Remove duplicated filter markup and obsolete styles
+### Phase 2: Dashboard Structure Refactor
+- [x] Replace inlined hero/nav/footer/section markup in `report-dashboard.tsx`
+- [x] Reuse shared hooks/components for dismissable menus and highlight cards
+- [x] Keep period navigation and global filter behavior unchanged
 - **Status:** complete
 
-### Phase 3: Verification
+### Phase 3: Question Rendering Refactor
+- [x] Reuse shared question shell and renderer components inside `question-block.tsx`
+- [x] Remove duplicated metric/matrix/branch rendering logic
+- [x] Preserve current styles and empty-state behavior
+- **Status:** complete
+
+### Phase 4: Verification
 - [x] Run targeted build/type verification
 - [x] Re-check affected files for regressions
 - [x] Log results in progress.md
 - **Status:** complete
 
-### Phase 4: Delivery
+### Phase 5: Delivery
 - [x] Summarize implemented changes
 - [x] Call out residual risks or follow-ups
 - **Status:** complete
 
 ## Key Questions
-1. 现有 `AudienceFilterTabs` 是否已足够承接顶部和题内两种筛选器，只缺接入和样式补齐？
-2. 题内筛选器是否应该继续保留 `tab/tablist` 语义，还是统一为与顶部一致的 `button + aria-pressed` 过滤器语义？
-3. 在统一组件后，是否还能保留题块的强调色能力，而不再维持两套独立 DOM 和样式？
+1. 哪些“已抽取组件”已经具备生产可用度，只是尚未接入主链路？
+2. `report-dashboard.tsx` 中哪些本地逻辑已经在其他组件或 hooks 中重复存在？
+3. `question-block.tsx` 与 `question-renderers.tsx` 的重复部分能否收敛到一套实现而不引入样式回归？
 
 ## Decisions Made
 | Decision | Rationale |
 |----------|-----------|
-| 复用现有 `components/audience-filter-tabs.tsx`，不再新建第二套组件 | 仓库里已经存在共享组件雏形，继续收敛更稳妥 |
-| 将题内筛选器语义统一为筛选按钮而非 tab | 它们控制的是同一份全局筛选状态，不对应独立 panel |
-| 优先做最小侵入改造，不顺带重构 `report-dashboard.tsx` 为 `report-hero.tsx` | 用户诉求是修复筛选器实现，不是整页组件拆分 |
-| 顺手补齐高亮卡片缺失的类型/导出 | 该缺口直接阻塞前端构建验证，且属于低风险静态修复 |
+| 优先复用仓库中已存在但未接线的组件，而不是继续新建抽象 | 当前冗余主要来自“主链路没接入已抽好的组件” |
+| `report-dashboard.tsx` 的提取边界放在页面骨架层 | hero、period menu、highlights、quick nav、footer 重复明显且职责稳定 |
+| `question-block.tsx` 的提取边界放在题目容器和渲染器层 | simple/matrix/branch 三种题型渲染已存在另一份实现，可直接收敛 |
+| 通过补齐样式别名接入共享组件，而不大面积重写 CSS | 保留现有视觉语义，降低重构回归面 |
 
 ## Errors Encountered
 | Error | Attempt | Resolution |
@@ -51,5 +56,5 @@ Phase 4
 | `pyproject.toml` 不存在 | 1 | 确认该仓库当前验证入口以 `package.json` 为主 |
 
 ## Notes
-- 上一轮排查已确认后续筛选器共享同一个全局状态，本轮只统一组件实现
+- 重点不是“把文件拆碎”，而是让已有公共组件真正承接主链路
 - 修改前后都要同步更新 `findings.md` 和 `progress.md`
